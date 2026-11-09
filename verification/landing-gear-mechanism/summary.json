@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "mesh_manifold_checks": {
+    "main_tire": {
+      "geometrically_welded_vertices": 2112,
+      "triangles": 4224,
+      "nonmanifold_edges": 0,
+      "inconsistent_edge_winding": 0
+    },
+    "nose_tire": {
+      "geometrically_welded_vertices": 2112,
+      "triangles": 4224,
+      "nonmanifold_edges": 0,
+      "inconsistent_edge_winding": 0
+    },
+    "brake_annulus": {
+      "geometrically_welded_vertices": 192,
+      "triangles": 384,
+      "nonmanifold_edges": 0,
+      "inconsistent_edge_winding": 0
+    }
+  },
+  "stowed_max_revolute_pin_residual_mm": 8.404429835801112e-08,
+  "full_cycle_drives": 37,
+  "native_fresh_reopen": true,
+  "sha256_source": "c932173f7bc712774a2ea1f394e63bedab232a40c2a600fb15ad304259e2aa40",
+  "sha256_builder": "73bf74d819bfcc3598c77fa57a1c5f5f74fbbf0c3c2af1bb5063863c0e8d2fe4"
+}

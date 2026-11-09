@@ -1,0 +1,272 @@
+{
+  "scope": "cockpit source geometry only, not native SolidCraft validation",
+  "statistics": {
+    "components": 335,
+    "bodies": 886,
+    "joints": 335,
+    "moving_joints": 269,
+    "triangles": 401026,
+    "detail_instances": 4263
+  },
+  "mesh_defects": [],
+  "missing_components": [],
+  "joint_cycles": [],
+  "hud_glass_bounds_m": [
+    [
+      4.47,
+      -0.091,
+      3.105
+    ],
+    [
+      4.573,
+      0.091,
+      3.255
+    ]
+  ],
+  "hud_clearance": {
+    "windrows": {
+      "minimum_surface_distance_m": 0.09220906010931945,
+      "hud_edge_intersections": 0,
+      "external_glass_triangles": 7536
+    },
+    "canopyrows": {
+      "minimum_surface_distance_m": 0.14301959940936868,
+      "hud_edge_intersections": 0,
+      "external_glass_triangles": 13776
+    }
+  },
+  "sha256": "2a11d67ee4d002bcb058785d11af6be46b69c658a3f58d79bcbd7d89d6fae0d9",
+  "joint_mappings": [
+    {
+      "name": "Flap selector cockpit handle motion",
+      "parent": "Panel LANDING GEAR",
+      "child": "Control Flap selector cockpit handle motion",
+      "origin": [
+        5.017014761965428,
+        -0.35900000000000004,
+        2.465382393405482
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": [
+        -25,
+        25
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Landing gear cockpit handle motion",
+      "parent": "Panel LANDING GEAR",
+      "child": "Control Landing gear cockpit handle motion",
+      "origin": [
+        5.032455156483684,
+        -0.33,
+        2.46348655134439
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": [
+        -55,
+        15
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Arresting hook cockpit handle motion",
+      "parent": "Panel HOOK HYDRAULIC",
+      "child": "Control Arresting hook cockpit handle motion",
+      "origin": [
+        4.941279794065626,
+        0.29600000000000004,
+        2.615058576556346
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": [
+        -50,
+        10
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Wing fold cockpit handle motion",
+      "parent": "Panel WING FOLD",
+      "child": "Control Wing fold cockpit handle motion",
+      "origin": [
+        5.058,
+        0.413,
+        2.62
+      ],
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "limits": [
+        -90,
+        90
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Control stick pitch",
+      "parent": "Cockpit fixed",
+      "child": "Stick pitch cradle",
+      "origin": [
+        5.04,
+        0,
+        2.253
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": [
+        -18,
+        18
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Control stick roll",
+      "parent": "Stick pitch cradle",
+      "child": "Control stick",
+      "origin": [
+        5.04,
+        0,
+        2.253
+      ],
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": [
+        -18,
+        18
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Left throttle travel",
+      "parent": "Cockpit fixed",
+      "child": "Throttle Left",
+      "origin": [
+        5.19,
+        -0.35,
+        2.564
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": [
+        -25,
+        40
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Right throttle travel",
+      "parent": "Cockpit fixed",
+      "child": "Throttle Right",
+      "origin": [
+        5.19,
+        -0.282,
+        2.564
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": [
+        -25,
+        40
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Left rudder input",
+      "parent": "Cockpit fixed",
+      "child": "Left rudder carriage",
+      "origin": [
+        4.575,
+        -0.157,
+        2.176
+      ],
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": [
+        -0.045,
+        0.045
+      ],
+      "default": 0,
+      "kind": "slider"
+    },
+    {
+      "name": "Right rudder input",
+      "parent": "Cockpit fixed",
+      "child": "Right rudder carriage",
+      "origin": [
+        4.575,
+        0.157,
+        2.176
+      ],
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": [
+        -0.045,
+        0.045
+      ],
+      "default": 0,
+      "kind": "slider"
+    },
+    {
+      "name": "Canopy manual lock lever",
+      "parent": "Cockpit fixed",
+      "child": "Control Canopy manual lock lever",
+      "origin": [
+        5.615,
+        0.416,
+        2.651
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": [
+        -35,
+        35
+      ],
+      "default": 0,
+      "kind": "revolute"
+    }
+  ]
+}

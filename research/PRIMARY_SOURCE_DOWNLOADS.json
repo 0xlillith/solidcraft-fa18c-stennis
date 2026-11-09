@@ -1,0 +1,96 @@
+{
+  "scope": "Portable archive inventory; archive_file is present only for a PDF actually included",
+  "research_originals_untouched": true,
+  "included_pdf_count": 4,
+  "link_only_source_count": 6,
+  "sources": [
+    {
+      "reference_filename": "nasa-19830025689-wing-structure.pdf",
+      "title": "Garbo / McDonnell: composite wing structure, NASA record 19830025689",
+      "source_url": "https://ntrs.nasa.gov/api/citations/19830025689/downloads/19830025689.pdf",
+      "accessed": "2026-11-09",
+      "archive_status": "link only; full PDF is not included",
+      "reason": "Externally authored NASA-hosted or unavailable paper retained as a source URL without asserting public-domain status."
+    },
+    {
+      "reference_filename": "ge-f404-family-2020.pdf",
+      "title": "GE Aerospace F404 family datasheet",
+      "source_url": "https://www.geaerospace.com/sites/default/files/2022-01/F404%20Family%20Data%20Sheet_UPDATED.pdf",
+      "accessed": "2026-11-09",
+      "archive_status": "link only; full PDF is not included",
+      "reason": "Copyrighted manufacturer, simulator, or conference work retained as a source URL."
+    },
+    {
+      "reference_filename": "nasa-tm88273-f404-survey.pdf",
+      "title": "NASA TM 88273: F404 exhaust-gas survey",
+      "source_url": "https://ntrs.nasa.gov/api/citations/19880010923/downloads/19880010923.pdf",
+      "accessed": "2026-11-09",
+      "archive_status": "included public-domain NASA reference PDF",
+      "archive_file": "research/primary/nasa-tm88273-f404-survey.pdf",
+      "bytes": 1937387,
+      "sha256": "21dbdbe5e6b90cb41fa4af518b3b5e19e1ffa575283c3a9c3b0accff2b715d66"
+    },
+    {
+      "reference_filename": "nasa-tm4140-f404-measurement.pdf",
+      "title": "NASA TM 4140: F404 in-flight thrust measurement",
+      "source_url": "https://ntrs.nasa.gov/api/citations/19900002425/downloads/19900002425.pdf",
+      "accessed": "2026-11-09",
+      "archive_status": "included public-domain NASA reference PDF",
+      "archive_file": "research/primary/nasa-tm4140-f404-measurement.pdf",
+      "bytes": 1824415,
+      "sha256": "3abc1f45406b03471f8ce73aa0a41a00831602c84e79237e9224ff1fd2e7fae4"
+    },
+    {
+      "reference_filename": "nasa-tm87132-materials.pdf",
+      "title": "NASA TM 87132: aircraft engine composite materials",
+      "source_url": "https://ntrs.nasa.gov/api/citations/19860003939/downloads/19860003939.pdf",
+      "accessed": "2026-11-09",
+      "archive_status": "included public-domain NASA reference PDF",
+      "archive_file": "research/primary/nasa-tm87132-materials.pdf",
+      "bytes": 2701589,
+      "sha256": "a7619d31a1dcbb9dad179ae2d84af41f1ee495ef8761fcb81699b7b499b51812"
+    },
+    {
+      "reference_filename": "nasa-cr182228-duct-development.pdf",
+      "title": "GE / NASA CR-182228: PMR graphite engine duct development",
+      "source_url": "https://ntrs.nasa.gov/api/citations/19900000721/downloads/19900000721.pdf",
+      "accessed": "2026-11-09",
+      "archive_status": "link only; full PDF is not included",
+      "reason": "Externally authored NASA-hosted or unavailable paper retained as a source URL without asserting public-domain status."
+    },
+    {
+      "reference_filename": "ge-icas1984-f404.pdf",
+      "title": "GE authors, ICAS 1984: F404 new standards for fighter aircraft engines",
+      "source_url": "https://www.icas.org/icas_archive/ICAS1984/ICAS-84-5.4.2.pdf",
+      "accessed": "2026-11-09",
+      "archive_status": "link only; full PDF is not included",
+      "reason": "Copyrighted manufacturer, simulator, or conference work retained as a source URL."
+    },
+    {
+      "reference_filename": "martin-baker-naces-2025.pdf",
+      "title": "Martin-Baker NACES manufacturer datasheet",
+      "source_url": "https://martin-baker.com/wp-content/uploads/2023/11/NACES-2025-Data-Sheet-2.pdf",
+      "accessed": "2026-11-09",
+      "archive_status": "link only; full PDF is not included",
+      "reason": "Copyrighted manufacturer, simulator, or conference work retained as a source URL."
+    },
+    {
+      "reference_filename": "dcs-fa18c-official-guide.pdf",
+      "title": "Eagle Dynamics DCS F/A-18C official guide",
+      "source_url": "https://www.digitalcombatsimulator.ru/upload/iblock/ea9/lxf69u2uk1fhqq7ndb55z9egzabe8hdg/DCS%20FA-18C%20Early%20Access%20Guide%20EN.pdf",
+      "accessed": "2026-11-09",
+      "archive_status": "link only; full PDF is not included",
+      "reason": "Copyrighted manufacturer, simulator, or conference work retained as a source URL."
+    },
+    {
+      "reference_filename": "nasa-fa18-reference.pdf",
+      "title": "NASA F/A-18 mission-support aircraft fact sheet",
+      "source_url": "https://www.nasa.gov/wp-content/uploads/2021/09/fs-006-afrc_0.pdf",
+      "accessed": "2026-11-09",
+      "archive_status": "included public-domain NASA reference PDF",
+      "archive_file": "research/primary/nasa-fa18-reference.pdf",
+      "bytes": 247966,
+      "sha256": "8f62a3794e1a939e8ab2f0222fe6dc514585c42d1939b45a9428ef59f1241393"
+    }
+  ]
+}

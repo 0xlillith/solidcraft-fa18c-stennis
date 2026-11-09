@@ -1,0 +1,1878 @@
+{
+  "binary_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+  "server": {
+    "capabilities": {
+      "resources": {
+        "listChanged": false
+      },
+      "tools": {
+        "listChanged": false
+      }
+    },
+    "instructions": "SolidCraft is an independent parametric 3D CAD app, and these tools drive it: when its window is open the user watches the model appear, otherwise a headless session builds it. When asked to design or build a part, do it with these tools straight away. Units are millimetres and degrees in expressions, Z is up.\n\nStart: for anything beyond one primitive, call `skill_reference {\"skill\":\"solidcraft-modeling\"}` first (command shapes, ids, plane axes, worked examples and the known traps of this version; `file: \"SKILL.md\"` has the workflow). Then `inspect_design {\"measure\":false,\"sketches\":false}` to see what is already there.\n\nPlan: work the numbers out first (the parameters, the expected volume and bounding box after each stage, the world point you will use for each edge or face pick). Then build in a few `batch` calls (all-or-nothing; the reply names the failing step; `save`, `measure` and `set_parameter` can be steps). Use `verbose: false`. Name every feature. `list_commands {\"filter\": word}` gives ids and one-line parameter docs (never unfiltered: it also takes prefix, panel, compact: true and limit); `describe_command` gives one command's docs and schemas.\n\nRoutes: a plate, block, boss, standoff or hole is cheapest as a primitive with expression fields (`solid.box`, `solid.cylinder`, `solid.hole`, `solid.fillet`, `solid.shell`, patterns and mirror), no sketch. Sketch when the profile is not a box or a circle. Fillet outside edges before shelling, build inside features after the shell, then the holes and cuts through walls. Give a blind hole or a hole through one wall of a hollow part its depth.\n\nParametric: a size or position that must follow a parameter is an expression in a feature field (`\"L/2 - 10\"`), a sketch dimension to `\"origin\"` or an edge, or a pattern spacing; a plain number never follows a parameter. Every sketch must end at dof 0 (`sketch.solve` reports it). A pick (`edges: [[x,y,z]]`, `faces: [[x,y,z]]`) is a number that snaps to the nearest edge or face and follows it when parameters change.\n\nVerify: `measure {}` after each stage and compare volume and bbox with your numbers; `ok: true` alone proves nothing: a cut that leaves the volume unchanged has missed, a join that adds a body did not touch. Positions of holes and bosses come from `body_topology` (cylinder origin, axis and radius), not from the volume or the centre of mass of a symmetric part. To check that the design follows its parameters, `check_parameters {\"set\": {name: value}}` tries the values and puts the design back (volume, errors, cylinder axes), or change them in one `batch` with `coalesce_parameters: true` (one rebuild), `measure`, then set them back the same way before saving.\n\nFix, don't rebuild: a wrong number in a feature is changed with `timeline.edit` or `parameters.change` on its input (`parameters.list {\"filter\":\"feature\"}` names them); `edit.checkpoint` and `edit.restore_checkpoint` go back exactly.\n\nA call whose error starts `still running:` was not cancelled: don't send it again; `pending` waits for its result. Backend: headless in-process SolidCraft session.",
+    "protocolVersion": "2025-06-18",
+    "serverInfo": {
+      "name": "solidcraft",
+      "title": "SolidCraft",
+      "version": "0.40.0-rc.3"
+    }
+  },
+  "schemas": {
+    "doc.open": {
+      "id": "doc.open",
+      "input": null,
+      "label": "Open",
+      "output": null,
+      "params": "path: .sc design (or a .solidcraft design from an earlier release), .dxf/.svg drawing (opens as a new, unsaved design with an XY sketch, using sketch.insert_dxf/sketch.insert_svg units and defaults), or a .step/.stp/.igs/.fcstd/.3dm/.3mf/.stl/.obj/.glb/.gltf file (STEP, IGES, FreeCAD, Rhino, 3MF, STL, OBJ or glTF; opens as a new design holding the file as a component named after it, as file.insert_step and file.insert_mesh make), or a .ply/.xyz/.pts point cloud (opens as a new design holding it, as pointcloud.insert makes; its `units` and `max_points` as there); up?: z|y for a STEP, IGES, FreeCAD, Rhino or glTF file (see file.insert_step and file.insert_mesh); names?: auto|solid|product|instance for a STEP, IGES, FreeCAD or Rhino file (see file.insert_step); units?: for an STL or OBJ file (see file.insert_mesh); origin?: bool for a mesh file (see file.insert_mesh); folder?: bool for a STEP, IGES, FreeCAD or Rhino file (see file.insert_step); read_only?: bool (a design: saving to its own file is refused, file.save_as keeps the changes elsewhere) → open_elsewhere: {host, user, app, opened} when another SolidCraft has the design open (its lock file is fresh); newer_file: {format, reads_up_to, unknown_changes, not_understood, notice} and warnings when a newer SolidCraft saved it: it opens all the same, and what this version can't read is named there and kept by saving"
+    },
+    "file.save_as": {
+      "id": "file.save_as",
+      "input": null,
+      "label": "Save As",
+      "output": null,
+      "params": "path (a design file name, .sc as a rule; one that opens as another kind of file, such as .step, .stl or .dxf, is refused: file.export writes those); format?: container|json (default: json for .json, otherwise container); compression?: fast|compact (default: fast); cache?: bool (the evaluated model, so the design opens without rebuilding; default: true); preview?: bool (saved display meshes, default: false); overwrite?: bool (as file.save, when `path` is the design's own file)"
+    },
+    "file.insert_mesh": {
+      "id": "file.insert_mesh",
+      "input": null,
+      "label": "Insert Mesh",
+      "output": null,
+      "params": "path: .3mf, .stl, .obj, .ply (with faces), .glb or .gltf file (its meshes join the design as mesh bodies in a new component named after the file → component, component_name, occurrence; a glTF file's node tree becomes nested components held as one rigid group until component.unlock, a mesh placed again another occurrence, its materials the bodies' appearances, and its metres millimetres); name?; up?: z|y for a glTF file (default y: glTF has Y up, so the import's component is turned a quarter turn about X, Y becoming Z → stand_up: its occurrence; z: the file's axes are kept); units?: mm|cm|m|in|ft for an STL or OBJ file, or a PLY file with faces (default mm): the unit its coordinates are in, scaled to millimetres as the file is read (a 3MF or glTF file states its own). The design keeps the millimetre mesh and not the unit, so insert the file again to try another; origin?: bool (default false: the mesh keeps its file's coordinates; true: once read, scaled and stood up, the import's occurrence is moved so the box around its bodies is centred on X and Y of the active component with its lowest point on Z = 0 → moved_to_origin: [x, y, z], the shift made)"
+    },
+    "joint.motion_link": {
+      "id": "joint.motion_link",
+      "input": null,
+      "label": "Motion Link",
+      "output": null,
+      "params": "a, b: joints; ratio (b = ratio · a + offset): b's units per a's (mm per deg for an angle driving a distance); offset?: in b's units (deg for an angle, mm for a distance, or an expression); ia?, ib?: value indices (default 0)"
+    },
+    "joint.as_built": {
+      "id": "joint.as_built",
+      "input": null,
+      "label": "As-Built Joint",
+      "output": null,
+      "params": "type, a: occurrence, b: occurrence (stay where they are); at?: joint origin (default: b's origin) — the joint's frame; one on a or b is kept on its face or hole there, so the joint follows it as the design changes; name?; limits?: [[min, max] | null…]; quiet?: bool"
+    },
+    "joint.drive": {
+      "id": "joint.drive",
+      "input": null,
+      "label": "Drive Joints",
+      "output": null,
+      "params": "joint: id|name; value | values: [angles in deg or expressions, distances] (values not given keep theirs; a value driven drops the expression joint.create gave it; clamped to the limits; the other joints of a closed loop follow, and the motion stops where the loop can no longer close → stopped_by_loop); quiet?: bool (leave out dof and fixed) → values: [{name, value, unit: deg|mm, limits}] as joint.list gives them; requested: the values asked for, in the same form; held: [{name, requested, value, unit, why}] for each driven value that ended up elsewhere (a motion link sets it, as a screw's travel follows its turn; a limit; contact; a closed loop); moved: whether any occurrence moved; reason: why the joint can move nothing (suppressed: nothing is stored; its origins lost; its chain joined to nothing grounded → unconnected: the occurrence named; or, when nothing moved, the first held value's why); index?: zero-based coordinate to drive with value (the other coordinates follow); continuous?: bool (drag frame, suppress UI echo)"
+    },
+    "motion.study": {
+      "id": "motion.study",
+      "input": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Make a motion study, which drives joints along a timeline of steps: each key gives one value of\none joint at some steps, linear in between and held before the first and after the last. With\n`study`, change that study instead. One undo step.",
+        "properties": {
+          "keys": {
+            "description": "The study's keys, replacing any it has (at most 1000). Each drives one value of one joint: `joint` by id or name, `index` the value (0 for a revolute's angle; default 0), and `points` as [step, value] pairs (1 to 10 000), a value being degrees for an angle and mm for a distance, or an expression.",
+            "items": {
+              "properties": {
+                "index": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "joint": {
+                  "type": [
+                    "number",
+                    "string"
+                  ]
+                },
+                "points": {
+                  "items": {
+                    "minItems": 2,
+                    "prefixItems": [
+                      {
+                        "exclusiveMaximum": 1000000000.0,
+                        "exclusiveMinimum": -1000000000.0,
+                        "type": "number"
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "exclusiveMaximum": 1000000000.0,
+                            "exclusiveMinimum": -1000000000.0,
+                            "type": "number"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ]
+                      }
+                    ],
+                    "type": "array"
+                  },
+                  "maxItems": 10000,
+                  "minItems": 1,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "joint",
+                "points"
+              ],
+              "type": "object"
+            },
+            "maxItems": 1000,
+            "type": "array"
+          },
+          "name": {
+            "default": null,
+            "description": "The study's name; blank text keeps it. Default for a new one: \"Motion Study\" and the first\nnumber no study's name has.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "steps": {
+            "description": "How many steps the timeline has: 1 to 100 000 (a fraction rounds). Default for a new one: 100.",
+            "format": "double",
+            "maximum": 100000,
+            "minimum": 1,
+            "type": "number"
+          },
+          "study": {
+            "description": "A study to change, by id (a number) or name; left out, a new one is made.",
+            "type": [
+              "number",
+              "string"
+            ]
+          }
+        },
+        "title": "MotionStudyParams",
+        "type": "object"
+      },
+      "label": "Motion Study",
+      "output": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "What `motion.study` returns: the study made or changed.",
+        "properties": {
+          "keys": {
+            "description": "How many keys it has.",
+            "format": "uint",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "param_warnings": {
+            "description": "In the warn parameter-check mode: what the call's parameters got wrong.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "steps": {
+            "format": "uint32",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "study": {
+            "description": "The study's id.",
+            "format": "uint64",
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "study",
+          "name",
+          "steps",
+          "keys"
+        ],
+        "title": "MotionStudySaved",
+        "type": "object"
+      },
+      "params": "name?; study? (edit an existing one); steps? (timeline length, default 100); keys: [{joint, index?, points: [[step, value], …]}] (values: degrees for angles, mm for distances, or expressions)"
+    },
+    "view.save": {
+      "id": "view.save",
+      "input": null,
+      "label": "New Named View",
+      "output": null,
+      "params": "name?; camera: {target: [x,y,z], yaw, pitch, distance, fov?} (replaces a view of the same name)"
+    },
+    "view.list": {
+      "id": "view.list",
+      "input": null,
+      "label": "List Named Views",
+      "output": null,
+      "params": ""
+    },
+    "browser.visibility": {
+      "id": "browser.visibility",
+      "input": {
+        "$defs": {
+          "FoldPath": {
+            "description": "A placement, by the occurrence ids from the design down.",
+            "items": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "type": "array"
+          },
+          "PlacementPath": {
+            "description": "A placement, by the occurrence ids from the design down.",
+            "items": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "maxItems": 64,
+            "minItems": 0,
+            "type": "array"
+          },
+          "PlacementPaths": {
+            "description": "Placements, each by the occurrence ids from the design down; each with its descendants.",
+            "items": {
+              "$ref": "#/$defs/FoldPath"
+            },
+            "maxItems": 10000,
+            "minItems": 1,
+            "type": "array"
+          },
+          "ShownFeatures": {
+            "description": "Feature ids or names.",
+            "items": {
+              "anyOf": [
+                {
+                  "maxLength": 256,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              ]
+            },
+            "maxItems": 10000,
+            "type": "array"
+          },
+          "ShownItems": {
+            "description": "Sketches (id or name), bodies, construction items, joints or origin items (O, X, Y, Z, XY, XZ, YZ), by name.",
+            "items": {
+              "anyOf": [
+                {
+                  "maxLength": 256,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              ]
+            },
+            "maxItems": 10000,
+            "type": "array"
+          },
+          "ShownJoints": {
+            "description": "Joint ids (numbers) or names.",
+            "items": {
+              "type": [
+                "number",
+                "string"
+              ]
+            },
+            "maxItems": 10000,
+            "minItems": 1,
+            "type": "array"
+          },
+          "TreeFolderKeys": {
+            "description": "Browser folder or group keys: `c0` (the design) or `o:` and the placement's occurrence ids joined by `/`, then `/bodies`, `/sketches`, `/construction`, `/joints`, `/canvases`, `/point_clouds` or `/g` and a group id.",
+            "items": {
+              "maxLength": 2048,
+              "type": "string"
+            },
+            "maxItems": 10000,
+            "minItems": 1,
+            "type": "array"
+          },
+          "VisibilityFolder": {
+            "description": "A folder, whole: bodies, sketches, construction, origin, joints or all.",
+            "enum": [
+              "bodies",
+              "sketches",
+              "construction",
+              "origin",
+              "joints",
+              "all"
+            ],
+            "type": "string"
+          },
+          "Visible": {
+            "description": "true to show, false to hide.",
+            "type": "boolean"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Show or hide what is in the Browser: name one kind of target (`items`, `joints`, `features`,\n`folder`, `tree_folders` or `paths`). Saved with the design and undone like any other\nchange; the camera is not. With `isolate`, everything else is hidden.",
+        "properties": {
+          "features": {
+            "$ref": "#/$defs/ShownFeatures",
+            "description": "Features, by id or name: the bodies they made. Sketches go in `items`."
+          },
+          "folder": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/VisibilityFolder"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "All of a kind: bodies, sketches, construction, origin, joints or all. Showing also shows\nthe browser folders and groups that hold it, and `all` takes in the occurrence hides."
+          },
+          "isolate": {
+            "default": null,
+            "description": "With `paths`, or `items` of bodies, and `visible: true`: show only those and hide\neverything else, other placements as placements. Default: false.",
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "items": {
+            "$ref": "#/$defs/ShownItems",
+            "description": "Sketches, bodies, construction items, joints or origin items, by key. With `isolate` and\n`visible: true`: the bodies to keep."
+          },
+          "joints": {
+            "$ref": "#/$defs/ShownJoints",
+            "description": "Joints, by id or name: their glyphs (they still constrain and move parts)."
+          },
+          "path": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/PlacementPath"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "With `features`: only the bodies of this placement, which must be one of the features'\ncomponent."
+          },
+          "paths": {
+            "$ref": "#/$defs/PlacementPaths",
+            "description": "Exact placements and their descendants, each by its occurrence ids."
+          },
+          "tree_folders": {
+            "$ref": "#/$defs/TreeFolderKeys",
+            "description": "The folders or groups themselves, by tree key; their items keep their own state."
+          },
+          "visible": {
+            "$ref": "#/$defs/Visible"
+          }
+        },
+        "required": [
+          "visible"
+        ],
+        "title": "BrowserVisibilityParams",
+        "type": "object"
+      },
+      "label": "Show/Hide",
+      "output": {
+        "$defs": {
+          "Isolated": {
+            "anyOf": [
+              {
+                "description": "The bodies kept, by name (`items`).",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "description": "The placements kept, by occurrence path (`paths`).",
+                "items": {
+                  "items": {
+                    "format": "uint64",
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "type": "array"
+                },
+                "type": "array"
+              }
+            ],
+            "description": "What an isolate kept."
+          },
+          "VisibilityState": {
+            "description": "What the browser hides and shows, as the design saves it.",
+            "properties": {
+              "hidden_bodies": {
+                "description": "Bodies hidden, by name.",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "hidden_folders": {
+                "description": "Browser folders and groups hidden themselves, by tree key. Present when there are any.",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "hidden_joints": {
+                "description": "Joints whose glyphs are hidden, by id. Present when there are any.",
+                "items": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "type": "array"
+              },
+              "hidden_occurrences": {
+                "description": "Placements hidden with all their descendants, by occurrence path.",
+                "items": {
+                  "items": {
+                    "format": "uint64",
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "type": "array"
+                },
+                "type": "array"
+              },
+              "hidden_origin": {
+                "description": "Origin items and construction geometry hidden, by name.",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "hidden_profiles": {
+                "description": "Sketches whose closed profiles are not shaded, by feature id. Present when there are any.",
+                "items": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "type": "array"
+              },
+              "hidden_sketches": {
+                "description": "Sketches hidden, by feature id.",
+                "items": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "type": "array"
+              },
+              "locked_bodies": {
+                "description": "Bodies locked in the browser, by name. Present when there are any.",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "origin_hidden": {
+                "description": "Whether the Origin folder is hidden. Present when set.",
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "shown_dimensions": {
+                "description": "Sketches whose dimensions are shown, by feature id. Present when there are any.",
+                "items": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "type": "array"
+              },
+              "shown_sketches": {
+                "description": "Finished sketches shown although a feature uses them, by feature id.",
+                "items": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "hidden_bodies",
+              "hidden_occurrences",
+              "hidden_origin",
+              "hidden_sketches",
+              "shown_sketches"
+            ],
+            "type": "object"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "What `browser.visibility` returns.",
+        "properties": {
+          "changed": {
+            "description": "How many targets were changed. Not given by an isolate.",
+            "format": "uint",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "isolated": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Isolated"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "What an isolate kept. Only given by an isolate."
+          },
+          "param_warnings": {
+            "description": "In the warn parameter-check mode: what the call's parameters got wrong.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "visibility": {
+            "$ref": "#/$defs/VisibilityState",
+            "description": "What is hidden and shown now."
+          },
+          "visible": {
+            "description": "What was asked for.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "visible",
+          "visibility"
+        ],
+        "title": "BrowserVisibilityResult",
+        "type": "object"
+      },
+      "params": "visible: bool; items?: [sketch id or name | body name | construction name | joint name | O|X|Y|Z|XY|XZ|YZ]; or joints?: [joint id or name] (their glyphs; they still constrain and move parts); or features?: [feature id or name] (the bodies they made; path?: [occurrence ids] for only that placement's); or folder?: bodies|sketches|construction|origin|joints|all (all of it; showing also shows its browser folders and groups, and `all` takes in the occurrence hides too); or tree_folders?: [browser folder or group key: c0/bodies, o:4/sketches, c0/g7, c0/joints, c0/canvases, c0/point_clouds] (the folder or group itself: its items keep their own state); or paths?: [[occurrence ids]] (exact placements and descendants), isolate?: bool (with paths or items of bodies, and visible:true: everything else is hidden, other placements as placements). Saved with the design and undone like any other change (the camera is not)"
+    },
+    "component.list": {
+      "id": "component.list",
+      "input": null,
+      "label": "List Components",
+      "output": null,
+      "params": "compact?: bool (counts of bodies, features, sketches and construction planes instead of their names; occurrences leave out identity transforms; children as occurrence ids); bodies?: bool (with compact: body names, not their count)"
+    },
+    "component.delete": {
+      "id": "component.delete",
+      "input": null,
+      "label": "Delete Component",
+      "output": null,
+      "params": "component: deletes it, its subcomponents, occurrences and features"
+    },
+    "document.metadata.set": {
+      "id": "document.metadata.set",
+      "input": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Change design properties in one undo step: `key` and `value`, or `values` for several at\nonce (all or nothing). A change that sets what is already there makes no undo step.",
+        "properties": {
+          "key": {
+            "default": null,
+            "description": "The property to set: one of SolidCraft's keys (the ones `document.metadata`'s\n`properties` lists), which take text, or another tool's reverse-DNS key such as\n`com.example.tool`, which takes an object. `bom_type` is a component's property and is\nrefused here. Needs `value`; not with `values`.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "value": {
+            "default": null,
+            "description": "The value for `key`: text for SolidCraft's keys, an object for another tool's. `\"\"` or\nnull removes the key. Required with `key`."
+          },
+          "values": {
+            "additionalProperties": true,
+            "default": null,
+            "description": "Several properties at once, `{key: value, …}`, at most 256 keys, each as `key` and\n`value` take them. Not with `key`.",
+            "type": [
+              "object",
+              "null"
+            ]
+          }
+        },
+        "title": "MetadataSetParams",
+        "type": "object"
+      },
+      "label": "Change Design Properties",
+      "output": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "What `document.metadata.set` returns.",
+        "properties": {
+          "changed": {
+            "description": "The keys whose value changed, in key order.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "metadata": {
+            "additionalProperties": true,
+            "description": "The design's metadata object after the change.",
+            "type": "object"
+          },
+          "param_warnings": {
+            "description": "In the warn parameter-check mode: what the call's parameters got wrong.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "metadata",
+          "changed"
+        ],
+        "title": "MetadataSetResult",
+        "type": "object"
+      },
+      "params": "key and value, or values: {key: value, …} (all or nothing, one undo step). SolidCraft's keys, the ones document.metadata's properties lists, take text (\"\" or null removes); another tool's data goes under its reverse-DNS key such as com.example.tool (an object; null removes) → metadata, changed: [keys]"
+    },
+    "appearance.assign": {
+      "id": "appearance.assign",
+      "input": {
+        "$defs": {
+          "Color": {
+            "anyOf": [
+              {
+                "pattern": "^[\\u0009-\\u000d\\u0020\\u0085\\u00a0\\u1680\\u2000-\\u200a\\u2028-\\u2029\\u202f\\u205f\\u3000]*#*(?:[0-9A-Fa-f]{2}|\\+[0-9A-Fa-f]){3}[\\u0009-\\u000d\\u0020\\u0085\\u00a0\\u1680\\u2000-\\u200a\\u2028-\\u2029\\u202f\\u205f\\u3000]*$",
+                "type": "string"
+              },
+              {
+                "items": {
+                  "maximum": 255,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "maxItems": 3,
+                "minItems": 3,
+                "type": "array"
+              }
+            ],
+            "description": "A colour: \"#rrggbb\" or [r, g, b] with values 0–255."
+          },
+          "FaceSpots": {
+            "description": "Points in mm, one on each face: [x, y, z], or {\"point\": [x, y, z], \"body\": name} to say which body.",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Point3"
+                },
+                {
+                  "properties": {
+                    "body": {
+                      "type": "string"
+                    },
+                    "point": {
+                      "$ref": "#/$defs/Point3"
+                    }
+                  },
+                  "required": [
+                    "point"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "maxItems": 10000,
+            "type": "array"
+          },
+          "LookLabel": {
+            "description": "A label for a copied look, without control characters.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "PbrParameters": {
+            "additionalProperties": false,
+            "description": "An opaque PBR response.",
+            "properties": {
+              "dielectric_ior": {
+                "maximum": 3,
+                "minimum": 1,
+                "type": "number"
+              },
+              "metallic": {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "roughness": {
+                "maximum": 1,
+                "minimum": 0.045,
+                "type": "number"
+              }
+            },
+            "required": [
+              "metallic",
+              "roughness",
+              "dielectric_ior"
+            ],
+            "type": "object"
+          },
+          "Point3": {
+            "anyOf": [
+              {
+                "items": {
+                  "exclusiveMaximum": 1000000000.0,
+                  "exclusiveMinimum": -1000000000.0,
+                  "type": "number"
+                },
+                "maxItems": 3,
+                "minItems": 3,
+                "type": "array"
+              },
+              {
+                "properties": {
+                  "x": {
+                    "exclusiveMaximum": 1000000000.0,
+                    "exclusiveMinimum": -1000000000.0,
+                    "type": "number"
+                  },
+                  "y": {
+                    "exclusiveMaximum": 1000000000.0,
+                    "exclusiveMinimum": -1000000000.0,
+                    "type": "number"
+                  },
+                  "z": {
+                    "exclusiveMaximum": 1000000000.0,
+                    "exclusiveMinimum": -1000000000.0,
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "x",
+                  "y",
+                  "z"
+                ],
+                "type": "object"
+              }
+            ],
+            "description": "A point in mm: [x, y, z] or {\"x\", \"y\", \"z\"}."
+          },
+          "StringList": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 10000,
+                "type": "array"
+              }
+            ],
+            "description": "A name, or a list of names."
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "description": "Give bodies, faces or components a look, or clear theirs: a library appearance or a starter\nrecipe by `appearance`, or a `color`. With neither (or `color: null`) the targets' own looks\nare cleared, so a face follows its body, a body its component and a component its material.\nOne undo step; no dialogs.",
+        "properties": {
+          "appearance": {
+            "default": null,
+            "description": "A library appearance's name or a starter recipe's name or stable `starter.*` id (see\n`appearance.library`). With `color` too, that colour under this name. A recipe that\nneeds refraction (the glass ones) is refused.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "bodies": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/StringList"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Bodies, by name (a placed copy's name, `KB (K:2)`, means the body it shows)."
+          },
+          "body": {
+            "default": null,
+            "description": "The body the `faces` points are on, for points that don't name one. Default: the\nnearest body with a face there.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "color": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Color"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The colour, `\"#rrggbb\"` or `[r, g, b]` (0–255); with `appearance`, it replaces the\nrecipe's colour. `null` (without `appearance`) clears the targets' looks."
+          },
+          "components": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/StringList"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Components, by name or id, or a placement's name (`K:2`)."
+          },
+          "faces": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/FaceSpots"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Faces, by a point on each, at most 10000."
+          },
+          "name": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/LookLabel"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "A label for a copied look: needs `color`, not with `appearance`."
+          },
+          "opacity": {
+            "default": null,
+            "description": "0 (clear) to 1 (opaque). Default: 1, or the appearance's own. With `color` alone it\nmust be within 0–1; with `appearance` it is clamped there.",
+            "format": "double",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "pbr": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/PbrParameters"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The opaque PBR response (needs `color` or `appearance`, and opacity 1). Left out, a\nrecipe keeps its own; `null` clears it."
+          }
+        },
+        "title": "AppearanceAssignParams",
+        "type": "object"
+      },
+      "label": "Appearance",
+      "output": {
+        "$defs": {
+          "FaceSpot": {
+            "description": "A face with a look of its own: its body and the point on it the look was given at.",
+            "properties": {
+              "body": {
+                "type": "string"
+              },
+              "point": {
+                "description": "`[x, y, z]` in mm.",
+                "items": {
+                  "format": "double",
+                  "type": "number"
+                },
+                "maxItems": 3,
+                "minItems": 3,
+                "type": "array"
+              }
+            },
+            "required": [
+              "body",
+              "point"
+            ],
+            "type": "object"
+          },
+          "LookReply": {
+            "description": "A look, as the appearance commands report it.",
+            "properties": {
+              "color": {
+                "description": "`\"#rrggbb\"`.",
+                "type": "string"
+              },
+              "name": {
+                "description": "The library appearance's or recipe's name, or the look's label (`Custom` for a plain\ncolour).",
+                "type": "string"
+              },
+              "opacity": {
+                "description": "0 (clear) to 1 (opaque).",
+                "format": "double",
+                "type": "number"
+              },
+              "pbr": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/PbrReply"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Its opaque PBR response, when it has one."
+              }
+            },
+            "required": [
+              "name",
+              "color",
+              "opacity"
+            ],
+            "type": "object"
+          },
+          "PbrReply": {
+            "description": "A look's PBR response, as the appearance commands report it.",
+            "properties": {
+              "dielectric_ior": {
+                "format": "double",
+                "type": "number"
+              },
+              "metallic": {
+                "format": "double",
+                "type": "number"
+              },
+              "roughness": {
+                "format": "double",
+                "type": "number"
+              }
+            },
+            "required": [
+              "metallic",
+              "roughness",
+              "dielectric_ior"
+            ],
+            "type": "object"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "What `appearance.assign` returns: the targets, and the look they got (`null`: cleared).",
+        "properties": {
+          "appearance": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/LookReply"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "bodies": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "components": {
+            "description": "The components, by id.",
+            "items": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "faces": {
+            "items": {
+              "$ref": "#/$defs/FaceSpot"
+            },
+            "type": "array"
+          },
+          "param_warnings": {
+            "description": "In the warn parameter-check mode: what the call's parameters got wrong.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "bodies",
+          "faces",
+          "components",
+          "appearance"
+        ],
+        "title": "AppearanceAssignResult",
+        "type": "object"
+      },
+      "params": "bodies?: [names]; faces?: [[x,y,z] on faces] (body?: which body, default the nearest); components?: [names or ids, or occurrence names]; appearance?: library name or stable starter.* ID (appearance.library) | color: \"#rrggbb\" or [r, g, b] (0–255), opacity? (0–1, default 1); name?: inert copied look label (requires color, mutually exclusive with appearance); pbr?: {metallic:0..1, roughness:0.045..1, dielectric_ior:1..3} (requires color/appearance and opacity 1); a starter ID or registered starter name resolves its recipe before color overrides; omitted pbr retains that response and pbr: null explicitly clears it. Unavailable glass recipes refuse through either selector. Other custom labels with an explicit color retain legacy scalar behavior. Neither appearance nor color (or color: null): clear, so the face follows its body, the body its component, the component its material"
+    },
+    "document.inspect": {
+      "id": "document.inspect",
+      "input": null,
+      "label": "Inspect Design",
+      "output": null,
+      "params": "measure?: bool (include body measurements); sketch_counts?: bool (each sketch also gives its plane and its number of points and constraints)"
+    },
+    "material.list": {
+      "id": "material.list",
+      "input": null,
+      "label": "List Materials",
+      "output": null,
+      "params": "→ built-in and design-owned materials (user: true, look, optional physical_card/physical_validation/density_comparison). Read-only; candidate engineering records do not certify sources or supply a solver"
+    }
+  },
+  "commands": {
+    "file.new": {
+      "name": "Reopen verification isolation"
+    },
+    "file.insert_mesh": {
+      "component": 7,
+      "component_name": "RC3 Petal",
+      "created_bodies": [
+        "RC3_Petal"
+      ],
+      "feature": 9,
+      "name": "RC3 Petal",
+      "occurrence": 8,
+      "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/validation/rc3-capability-smoke/RC3_Petal.obj",
+      "units": "mm",
+      "warnings": []
+    },
+    "occurrence.ground": {
+      "grounded": false,
+      "occurrence": 8
+    },
+    "material.assign": {
+      "bodies": [
+        "RC3_Base"
+      ],
+      "material": "Aluminum"
+    },
+    "appearance.assign": {
+      "appearance": {
+        "color": "#b4d2dc",
+        "name": "RC3 clear fixture",
+        "opacity": 0.2
+      },
+      "bodies": [
+        "RC3_Petal"
+      ],
+      "components": [],
+      "faces": []
+    },
+    "joint.as_built": {
+      "conflicts": [],
+      "errors": [],
+      "joint": 11,
+      "name": "Petal hinge"
+    },
+    "joint.motion_link": {
+      "conflicts": [],
+      "dof": [
+        {
+          "dof": 0,
+          "occurrence": 0
+        },
+        {
+          "dof": 0,
+          "occurrence": 2
+        },
+        {
+          "dof": 1,
+          "occurrence": 5
+        },
+        {
+          "dof": 1,
+          "occurrence": 8
+        }
+      ],
+      "errors": [],
+      "fixed": [
+        0,
+        2
+      ]
+    },
+    "joint.drive": {
+      "conflicts": [],
+      "errors": [],
+      "joint": 10,
+      "moved": true,
+      "requested": [
+        {
+          "limits": [
+            0.0,
+            50.0
+          ],
+          "name": "distance",
+          "unit": "mm",
+          "value": 20.0
+        }
+      ],
+      "stopped_by_contact": null,
+      "stopped_by_loop": null,
+      "values": [
+        {
+          "limits": [
+            0.0,
+            50.0
+          ],
+          "name": "distance",
+          "unit": "mm",
+          "value": 20.0
+        }
+      ]
+    },
+    "joint.list": {
+      "conflicts": [],
+      "dof": [
+        {
+          "dof": 0,
+          "occurrence": 0
+        },
+        {
+          "dof": 0,
+          "occurrence": 2
+        },
+        {
+          "dof": 1,
+          "occurrence": 5
+        },
+        {
+          "dof": 1,
+          "occurrence": 8
+        }
+      ],
+      "errors": [],
+      "fixed": [
+        0,
+        2
+      ],
+      "floating": [],
+      "joints": [
+        {
+          "a": 2,
+          "b": 5,
+          "flip": true,
+          "frame_a": {
+            "origin": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "z": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          },
+          "frame_b": {
+            "origin": [
+              20.0,
+              0.0,
+              0.0
+            ],
+            "z": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          },
+          "id": 10,
+          "name": "Ring travel",
+          "offset": 0.0,
+          "suppressed": false,
+          "type": "slider",
+          "values": [
+            {
+              "limits": [
+                0.0,
+                50.0
+              ],
+              "name": "distance",
+              "unit": "mm",
+              "value": 20.0
+            }
+          ],
+          "visible": false
+        },
+        {
+          "a": 2,
+          "b": 8,
+          "flip": true,
+          "frame_a": {
+            "origin": [
+              100.0,
+              0.0,
+              0.0
+            ],
+            "z": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "frame_b": {
+            "origin": [
+              100.0,
+              0.0,
+              0.0
+            ],
+            "z": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "id": 11,
+          "name": "Petal hinge",
+          "offset": 0.0,
+          "suppressed": false,
+          "type": "revolute",
+          "values": [
+            {
+              "limits": [
+                0.0,
+                90.0
+              ],
+              "name": "angle",
+              "unit": "deg",
+              "value": 30.0
+            }
+          ],
+          "visible": false
+        }
+      ],
+      "links": [
+        {
+          "a": 10,
+          "b": 11,
+          "ia": 0,
+          "ib": 0,
+          "offset": 0.0,
+          "ratio": 1.5,
+          "unit": "deg"
+        }
+      ],
+      "origins": []
+    },
+    "view.save": {
+      "view": "RC3 inspection"
+    },
+    "view.apply": {
+      "camera": {
+        "distance": 350.0,
+        "fov": 0.6,
+        "pitch": 0.4,
+        "roll": 0.0,
+        "target": [
+          50.0,
+          0.0,
+          0.0
+        ],
+        "up": "z",
+        "yaw": 0.8
+      }
+    },
+    "browser.visibility": {
+      "changed": 2,
+      "visibility": {
+        "hidden_bodies": [
+          "RC3_Petal"
+        ],
+        "hidden_joints": [
+          10,
+          11
+        ],
+        "hidden_occurrences": [],
+        "hidden_origin": [
+          "O",
+          "X",
+          "Y",
+          "Z",
+          "XY",
+          "XZ",
+          "YZ"
+        ],
+        "hidden_sketches": [],
+        "shown_sketches": []
+      },
+      "visible": false
+    },
+    "motion.study": {
+      "keys": 1,
+      "name": "Ring coupled movement",
+      "steps": 100,
+      "study": 12
+    },
+    "document.metadata.set": {
+      "changed": [
+        "com.showcase.release",
+        "project"
+      ],
+      "metadata": {
+        "com.showcase.release": {
+          "tag": "v0.40.0-rc.3"
+        },
+        "project": "RC3 compatibility fixture"
+      }
+    },
+    "file.save_as": {
+      "bytes": 3020,
+      "name": "Official RC3 capability fixture",
+      "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/validation/rc3-capability-smoke/official-rc3-smoke.sc"
+    },
+    "doc.open": {
+      "errors": 0,
+      "features": 3,
+      "name": "Official RC3 capability fixture",
+      "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/validation/rc3-capability-smoke/official-rc3-smoke.sc",
+      "read_only": true
+    },
+    "view.list": {
+      "views": [
+        {
+          "distance": 350.0,
+          "fov": 0.6,
+          "name": "RC3 inspection",
+          "pitch": 0.4,
+          "target": [
+            50.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.8
+        }
+      ]
+    },
+    "motion.list": {
+      "studies": [
+        {
+          "id": 12,
+          "keys": [
+            {
+              "index": 0,
+              "joint": 10,
+              "joint_name": "Ring travel",
+              "points": [
+                [
+                  0.0,
+                  0.0
+                ],
+                [
+                  50.0,
+                  30.0
+                ],
+                [
+                  100.0,
+                  0.0
+                ]
+              ],
+              "unit": "mm"
+            }
+          ],
+          "name": "Ring coupled movement",
+          "steps": 100
+        }
+      ],
+      "traces": []
+    },
+    "component.list": {
+      "active": 0,
+      "components": [
+        {
+          "bodies": [],
+          "children": [
+            2,
+            5,
+            8
+          ],
+          "construction": 0,
+          "features": 0,
+          "id": 0,
+          "name": "Official RC3 capability fixture",
+          "occurrences": [],
+          "parent": null,
+          "sketches": 0
+        },
+        {
+          "bodies": [
+            "RC3_Base"
+          ],
+          "children": [],
+          "construction": 0,
+          "features": 1,
+          "id": 1,
+          "name": "RC3 Base",
+          "occurrences": [
+            {
+              "grounded": true,
+              "id": 2,
+              "name": "RC3 Base:1",
+              "parent": 0
+            }
+          ],
+          "parent": 0,
+          "sketches": 0
+        },
+        {
+          "bodies": [
+            "RC3_Actuator"
+          ],
+          "children": [],
+          "construction": 0,
+          "features": 1,
+          "id": 4,
+          "name": "RC3 Actuator",
+          "occurrences": [
+            {
+              "grounded": false,
+              "id": 5,
+              "name": "RC3 Actuator:1",
+              "parent": 0,
+              "transform": [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  20.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            }
+          ],
+          "parent": 0,
+          "sketches": 0
+        },
+        {
+          "bodies": [
+            "RC3_Petal"
+          ],
+          "children": [],
+          "construction": 0,
+          "features": 1,
+          "id": 7,
+          "name": "RC3 Petal",
+          "occurrences": [
+            {
+              "grounded": false,
+              "id": 8,
+              "name": "RC3 Petal:1",
+              "parent": 0,
+              "transform": [
+                [
+                  0.8660254037844386,
+                  0.0,
+                  -0.5,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.5,
+                  0.0,
+                  0.8660254037844386,
+                  0.0
+                ],
+                [
+                  13.397459621556138,
+                  0.0,
+                  50.0,
+                  1.0
+                ]
+              ]
+            }
+          ],
+          "parent": 0,
+          "sketches": 0
+        }
+      ],
+      "pending_moves": []
+    },
+    "document.inspect": {
+      "active_sketch": null,
+      "bodies": [
+        {
+          "feature": 3,
+          "name": "RC3_Base",
+          "visible": true
+        },
+        {
+          "feature": 6,
+          "name": "RC3_Actuator",
+          "visible": true
+        },
+        {
+          "feature": 9,
+          "name": "RC3_Petal",
+          "visible": false
+        }
+      ],
+      "dirty": false,
+      "hidden_origin": [
+        "O",
+        "X",
+        "Y",
+        "Z",
+        "XY",
+        "XZ",
+        "YZ"
+      ],
+      "marker": 3,
+      "metadata": {
+        "com.showcase.release": {
+          "tag": "v0.40.0-rc.3"
+        },
+        "project": "RC3 compatibility fixture"
+      },
+      "name": "Official RC3 capability fixture",
+      "params": [],
+      "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/validation/rc3-capability-smoke/official-rc3-smoke.sc",
+      "redo": 0,
+      "revision": 2,
+      "selection": [],
+      "sketches": [],
+      "timeline": [
+        {
+          "error": null,
+          "id": 3,
+          "ms": 0.023273,
+          "name": "RC3 Base",
+          "rolled_back": false,
+          "suppressed": false,
+          "type": "MeshFeature",
+          "warning": null
+        },
+        {
+          "error": null,
+          "id": 6,
+          "ms": 0.011011,
+          "name": "RC3 Actuator",
+          "rolled_back": false,
+          "suppressed": false,
+          "type": "MeshFeature",
+          "warning": null
+        },
+        {
+          "error": null,
+          "id": 9,
+          "ms": 0.009758000000000001,
+          "name": "RC3 Petal",
+          "rolled_back": false,
+          "suppressed": false,
+          "type": "MeshFeature",
+          "warning": null
+        }
+      ],
+      "undo": 0,
+      "units": "mm"
+    }
+  },
+  "checks": {
+    "link_followed": true,
+    "reopen_joint_values_same": false
+  },
+  "status": "complete",
+  "saved": {
+    "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/validation/rc3-capability-smoke/official-rc3-smoke.sc",
+    "sha256": "fb3b75b9e11c2c43f3aa052042dfdd8d9fc62e30ee2de8184496adae9d4dd52a",
+    "bytes": 3020
+  },
+  "container_entries": [
+    "blobs/94c2544e627d8565fdc7cebdee0e51e94877b0aa3fc1e1832386fc6e925a2d8c.mesh",
+    "blobs/70768d45ebee9eecdae9b1145aa674ff493bc2a068eaf986d5aa0d16f55c069b.mesh",
+    "blobs/3c42e39f960b40b31a897e1c49efdb36a6783b9fee0b64b1b45a90a69f28b84d.mesh",
+    "document.json",
+    "container.json"
+  ],
+  "container_document.json": {
+    "format": "solidcraft/51"
+  },
+  "container_container.json": {
+    "format": "solidcraft-container/1"
+  },
+  "reopened_views": {
+    "views": [
+      {
+        "distance": 350.0,
+        "fov": 0.6,
+        "name": "RC3 inspection",
+        "pitch": 0.4,
+        "target": [
+          50.0,
+          0.0,
+          0.0
+        ],
+        "yaw": 0.8
+      }
+    ]
+  },
+  "reopened_motion": {
+    "studies": [
+      {
+        "id": 12,
+        "keys": [
+          {
+            "index": 0,
+            "joint": 10,
+            "joint_name": "Ring travel",
+            "points": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                50.0,
+                30.0
+              ],
+              [
+                100.0,
+                0.0
+              ]
+            ],
+            "unit": "mm"
+          }
+        ],
+        "name": "Ring coupled movement",
+        "steps": 100
+      }
+    ],
+    "traces": []
+  },
+  "reopened_component": {
+    "active": 0,
+    "components": [
+      {
+        "bodies": [],
+        "children": [
+          2,
+          5,
+          8
+        ],
+        "construction": 0,
+        "features": 0,
+        "id": 0,
+        "name": "Official RC3 capability fixture",
+        "occurrences": [],
+        "parent": null,
+        "sketches": 0
+      },
+      {
+        "bodies": [
+          "RC3_Base"
+        ],
+        "children": [],
+        "construction": 0,
+        "features": 1,
+        "id": 1,
+        "name": "RC3 Base",
+        "occurrences": [
+          {
+            "grounded": true,
+            "id": 2,
+            "name": "RC3 Base:1",
+            "parent": 0
+          }
+        ],
+        "parent": 0,
+        "sketches": 0
+      },
+      {
+        "bodies": [
+          "RC3_Actuator"
+        ],
+        "children": [],
+        "construction": 0,
+        "features": 1,
+        "id": 4,
+        "name": "RC3 Actuator",
+        "occurrences": [
+          {
+            "grounded": false,
+            "id": 5,
+            "name": "RC3 Actuator:1",
+            "parent": 0,
+            "transform": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                20.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          }
+        ],
+        "parent": 0,
+        "sketches": 0
+      },
+      {
+        "bodies": [
+          "RC3_Petal"
+        ],
+        "children": [],
+        "construction": 0,
+        "features": 1,
+        "id": 7,
+        "name": "RC3 Petal",
+        "occurrences": [
+          {
+            "grounded": false,
+            "id": 8,
+            "name": "RC3 Petal:1",
+            "parent": 0,
+            "transform": [
+              [
+                0.8660254037844386,
+                0.0,
+                -0.5,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.5,
+                0.0,
+                0.8660254037844386,
+                0.0
+              ],
+              [
+                13.397459621556138,
+                0.0,
+                50.0,
+                1.0
+              ]
+            ]
+          }
+        ],
+        "parent": 0,
+        "sketches": 0
+      }
+    ],
+    "pending_moves": []
+  },
+  "reopened_inspect": {
+    "active_sketch": null,
+    "bodies": [
+      {
+        "feature": 3,
+        "name": "RC3_Base",
+        "visible": true
+      },
+      {
+        "feature": 6,
+        "name": "RC3_Actuator",
+        "visible": true
+      },
+      {
+        "feature": 9,
+        "name": "RC3_Petal",
+        "visible": false
+      }
+    ],
+    "dirty": false,
+    "hidden_origin": [
+      "O",
+      "X",
+      "Y",
+      "Z",
+      "XY",
+      "XZ",
+      "YZ"
+    ],
+    "marker": 3,
+    "metadata": {
+      "com.showcase.release": {
+        "tag": "v0.40.0-rc.3"
+      },
+      "project": "RC3 compatibility fixture"
+    },
+    "name": "Official RC3 capability fixture",
+    "params": [],
+    "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/validation/rc3-capability-smoke/official-rc3-smoke.sc",
+    "redo": 0,
+    "revision": 2,
+    "selection": [],
+    "sketches": [],
+    "timeline": [
+      {
+        "error": null,
+        "id": 3,
+        "ms": 0.023273,
+        "name": "RC3 Base",
+        "rolled_back": false,
+        "suppressed": false,
+        "type": "MeshFeature",
+        "warning": null
+      },
+      {
+        "error": null,
+        "id": 6,
+        "ms": 0.011011,
+        "name": "RC3 Actuator",
+        "rolled_back": false,
+        "suppressed": false,
+        "type": "MeshFeature",
+        "warning": null
+      },
+      {
+        "error": null,
+        "id": 9,
+        "ms": 0.009758000000000001,
+        "name": "RC3 Petal",
+        "rolled_back": false,
+        "suppressed": false,
+        "type": "MeshFeature",
+        "warning": null
+      }
+    ],
+    "undo": 0,
+    "units": "mm"
+  }
+}

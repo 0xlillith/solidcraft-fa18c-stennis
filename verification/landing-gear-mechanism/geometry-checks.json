@@ -1,0 +1,154 @@
+{
+  "dimensions": {
+    "main_tire": {
+      "nominal": "30x11.5-14.5",
+      "radius_m": 0.381,
+      "width_m": 0.2921,
+      "rim_radius_m": 0.18415
+    },
+    "nose_tire": {
+      "nominal": "22x6.6-10",
+      "radius_m": 0.2794,
+      "width_m": 0.16764,
+      "rim_radius_m": 0.127
+    },
+    "main_frames": {
+      "Port": {
+        "p": [
+          10.4,
+          -0.74,
+          1.72
+        ],
+        "k": [
+          10.52,
+          -1.435,
+          0.47
+        ],
+        "w": [
+          10.97,
+          -1.555,
+          0.381
+        ],
+        "axis": [
+          0.13466598478393735,
+          -0.8604842729892107,
+          0.4913571903212591
+        ],
+        "angle": 78.09513540111799,
+        "shrink": -0.16410266218024594,
+        "plane_axis": [
+          0.3453396033545277,
+          -0.7002494290347431,
+          0.6248130084204823
+        ],
+        "plane_angle": 124.20907386949827,
+        "target_k": [
+          11.65,
+          -0.67,
+          1.5
+        ],
+        "target_w": [
+          11.210082573068746,
+          -0.7999756034115071,
+          1.6199999999999999
+        ]
+      },
+      "Starboard": {
+        "p": [
+          10.4,
+          0.74,
+          1.72
+        ],
+        "k": [
+          10.52,
+          1.435,
+          0.47
+        ],
+        "w": [
+          10.97,
+          1.555,
+          0.381
+        ],
+        "axis": [
+          0.13466598478393735,
+          0.8604842729892107,
+          0.4913571903212591
+        ],
+        "angle": -78.09513540111799,
+        "shrink": -0.16410266218024594,
+        "plane_axis": [
+          -0.3453396033545277,
+          -0.7002494290347431,
+          -0.6248130084204823
+        ],
+        "plane_angle": 124.20907386949827,
+        "target_k": [
+          11.65,
+          0.67,
+          1.5
+        ],
+        "target_w": [
+          11.210082573068746,
+          0.7999756034115071,
+          1.6199999999999999
+        ]
+      }
+    },
+    "nose": {
+      "pivot": [
+        5.45,
+        0,
+        2.04
+      ],
+      "angle": 96.0,
+      "wheel_center": [
+        5.55,
+        0,
+        0.2794
+      ],
+      "launch_bar_stow": 117.26947198845808
+    },
+    "added_bodies": 200,
+    "limitations": "External visual reconstruction; exact linkage lengths, angles and load behavior are authored approximations.",
+    "sequence": "Raise launch bar; leave doors open; retract nose and mains; close doors. Reverse to extend."
+  },
+  "statistics": {
+    "components": 43,
+    "bodies": 201,
+    "joints": 53,
+    "articulated_joints": 53,
+    "triangles": 73584,
+    "vertices": 64216,
+    "modeled_detail_instances": 558
+  },
+  "nonfinite_vertices": [],
+  "degenerate_triangles": [],
+  "negative_volume_bodies": {},
+  "sources": [
+    {
+      "id": "gear-tire-primary",
+      "title": "NAVAIR 04-10-506, Aircraft Tires and Tubes, Table4-1",
+      "url": "https://navytribe.com/wp-content/uploads/2015/11/navair-04-10-506.pdf",
+      "claim": "F-18A-D main30x11.5-14.5 and nose22x6.6-10; DistributionA public release."
+    },
+    {
+      "id": "gear-main-photo",
+      "title": "Julian Herzog, HN-441 F/A-18C main gear, ILA2012",
+      "url": "https://commons.wikimedia.org/wiki/File:HN-441_F-A-18C_Hornet_Finnish_Air_Force_ILA_2012_main_landing_gear.jpg",
+      "license": "CC BY4.0",
+      "claim": "Visual reference for trailing arm, oleo, planing/shrink hardware, lines and fittings; no mesh copied."
+    },
+    {
+      "id": "gear-directions",
+      "title": "F/A-18A/B/C/D NATOPS, section2.10.1",
+      "url": "https://letsflyvfr.com/wp-content/uploads/2024/11/F-18-A-b-C-D-Hornet-NATOPS-FLIGHT-MANUAL.pdf",
+      "claim": "Only broad external behavior used: nose forward, mains aft, doors open when gear down."
+    },
+    {
+      "id": "gear-dcs",
+      "title": "Eagle Dynamics, F/A-18C landing-gear update,16 February2024",
+      "url": "https://www.digitalcombatsimulator.com/en/news/2024-02-16/",
+      "claim": "Reference that Hornet shock/gear articulation is complex; no DCS asset data used."
+    }
+  ]
+}

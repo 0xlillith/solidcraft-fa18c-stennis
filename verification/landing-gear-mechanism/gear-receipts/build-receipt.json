@@ -1,0 +1,1392 @@
+{
+  "status": "complete",
+  "started": "2026-11-09T17:56:34Z",
+  "output": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/verification/landing-gear-mechanism/gear.sc",
+  "manifest": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/verification/landing-gear-mechanism/scene_manifest.json",
+  "manifest_sha256": "e3c8d448cd6e72b66ea864418267bfe00b5a77a8fc06a74d87721192b63077a4",
+  "subset": "all",
+  "components": 43,
+  "bodies": 201,
+  "source_triangles": 73584,
+  "articulated_joints": 53,
+  "independent_drivers": 16,
+  "motion_links": [
+    {
+      "a": "Port main gear retract",
+      "b": "Port main shrink travel",
+      "ratio": -2.1013173399004916,
+      "offset": 0.0
+    },
+    {
+      "a": "Port main gear retract",
+      "b": "Port main wheel planing",
+      "ratio": 1.590484134914761,
+      "offset": 0.0
+    },
+    {
+      "a": "Starboard main gear retract",
+      "b": "Starboard main shrink travel",
+      "ratio": 2.1013173399004916,
+      "offset": 0.0
+    },
+    {
+      "a": "Starboard main gear retract",
+      "b": "Starboard main wheel planing",
+      "ratio": -1.590484134914761,
+      "offset": 0.0
+    }
+  ],
+  "obj_units": "mm",
+  "stages": [
+    {
+      "name": "Import original component geometry",
+      "started": "2026-11-09T17:56:35Z"
+    },
+    {
+      "name": "Assign closest available physical materials and appearances",
+      "started": "2026-11-09T17:56:36Z"
+    },
+    {
+      "name": "Create native joints, coupled mechanisms and launch pose",
+      "started": "2026-11-09T17:56:36Z"
+    },
+    {
+      "name": "Drive every independent mechanism and restore launch pose",
+      "started": "2026-11-09T17:56:37Z"
+    },
+    {
+      "name": "Persist native motion studies and named inspection views",
+      "started": "2026-11-09T17:56:37Z"
+    },
+    {
+      "name": "Validate native contents and save format 51",
+      "started": "2026-11-09T17:56:37Z"
+    },
+    {
+      "name": "Reopen in a fresh official RC3 process and verify retained state",
+      "started": "2026-11-09T17:56:37Z"
+    }
+  ],
+  "joint_probes": [
+    {
+      "joint": "Port main gear retract",
+      "probe": 15.619027080223598,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 130,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              0.0,
+              78.0951354011
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              0.0,
+              78.0951354011
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          10549.763116,
+          -573.619436,
+          1874.209479
+        ],
+        "min": [
+          10271.569698,
+          -1192.790655,
+          978.137229
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          10747.820590387852,
+          -572.8386775240556,
+          1874.123008498238
+        ],
+        "min": [
+          10271.304822281912,
+          -1145.850018624901,
+          1002.09411065413
+        ]
+      },
+      "linked_values_native": {
+        "Port main shrink travel": -32.820532436,
+        "Port main wheel planing": 24.8418147739,
+        "Starboard main shrink travel": 0.0,
+        "Starboard main wheel planing": 0.0
+      }
+    },
+    {
+      "joint": "Port main oleo compression",
+      "probe": 5.2,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 133,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              -12.0,
+              14.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              -12.0,
+              14.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          11122.114053,
+          -1354.9999999999989,
+          547.7327170000002
+        ],
+        "min": [
+          10430.0,
+          -1697.9999999999986,
+          228.8859470000003
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          11114.37254933827,
+          -1354.9999999999989,
+          540.7077923017341
+        ],
+        "min": [
+          10430.370404124562,
+          -1697.9999999999986,
+          186.29075783549172
+        ]
+      }
+    },
+    {
+      "joint": "Port main wheel spin",
+      "probe": 20.0,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 140,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              -360.0,
+              360.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              -360.0,
+              360.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          11351.0,
+          -1371.9999999999989,
+          762.0000000000001
+        ],
+        "min": [
+          10589.0,
+          -1703.9709999999986,
+          4.192729496921288e-13
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          11350.909331904233,
+          -1371.9999999999989,
+          761.909331904234
+        ],
+        "min": [
+          10589.090668095765,
+          -1703.9709999999986,
+          0.09066809576779633
+        ]
+      }
+    },
+    {
+      "joint": "Port main bay door",
+      "probe": 69.0,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 141,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              0.0,
+              90.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 87.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              0.0,
+              90.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 87.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          11720.0,
+          -1114.1915354764433,
+          1429.2625862987998
+        ],
+        "min": [
+          10040.0,
+          -1224.3244785863735,
+          563.151190806158
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          11720.0,
+          -872.2281015978826,
+          1427.4867456433735
+        ],
+        "min": [
+          10040.0,
+          -1226.9638921432709,
+          617.7924417423505
+        ]
+      }
+    },
+    {
+      "joint": "Starboard main gear retract",
+      "probe": -15.619027080223598,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 145,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              -78.0951354011,
+              0.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              -78.0951354011,
+              0.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          10549.763116,
+          1192.790655,
+          1874.209479
+        ],
+        "min": [
+          10271.569698,
+          573.619436,
+          978.137229
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          10747.820590387852,
+          1145.850018624901,
+          1874.123008498238
+        ],
+        "min": [
+          10271.304822281912,
+          572.8386775240556,
+          1002.09411065413
+        ]
+      },
+      "linked_values_native": {
+        "Port main shrink travel": 0.0,
+        "Port main wheel planing": 0.0,
+        "Starboard main shrink travel": -32.820532436,
+        "Starboard main wheel planing": 24.8418147739
+      }
+    },
+    {
+      "joint": "Starboard main oleo compression",
+      "probe": 5.2,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 148,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              -12.0,
+              14.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              -12.0,
+              14.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          11122.114053,
+          1697.9999999999986,
+          547.7327170000002
+        ],
+        "min": [
+          10430.0,
+          1354.9999999999989,
+          228.8859470000003
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          11114.37254933827,
+          1697.9999999999986,
+          540.7077923017341
+        ],
+        "min": [
+          10430.370404124562,
+          1354.9999999999989,
+          186.29075783549172
+        ]
+      }
+    },
+    {
+      "joint": "Starboard main wheel spin",
+      "probe": 20.0,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 155,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              -360.0,
+              360.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              -360.0,
+              360.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          11351.0,
+          1703.9709999999986,
+          762.0000000000001
+        ],
+        "min": [
+          10589.0,
+          1371.9999999999989,
+          4.192729496921288e-13
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          11350.909331904233,
+          1703.9709999999986,
+          761.909331904234
+        ],
+        "min": [
+          10589.090668095765,
+          1371.9999999999989,
+          0.09066809576779633
+        ]
+      }
+    },
+    {
+      "joint": "Starboard main bay door",
+      "probe": 69.0,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 156,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              0.0,
+              90.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 87.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              0.0,
+              90.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 87.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          11720.0,
+          1224.3244785863735,
+          1429.2625862987998
+        ],
+        "min": [
+          10040.0,
+          1114.1915354764433,
+          563.151190806158
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          11720.0,
+          1226.9638921432709,
+          1427.4867456433735
+        ],
+        "min": [
+          10040.0,
+          872.2281015978826,
+          617.7924417423505
+        ]
+      }
+    },
+    {
+      "joint": "Nose gear retract",
+      "probe": 19.200000000000003,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 160,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              0.0,
+              96.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              0.0,
+              96.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          5745.78854,
+          217.0,
+          2056.0
+        ],
+        "min": [
+          5433.1,
+          -217.0,
+          755.022126
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          5581.422395938432,
+          217.0,
+          2056.600654231377
+        ],
+        "min": [
+          5191.913225694085,
+          -217.0,
+          742.3287894724224
+        ]
+      }
+    },
+    {
+      "joint": "Nose oleo compression",
+      "probe": 0.04,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 161,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              -120.0,
+              80.0
+            ],
+            "name": "distance",
+            "unit": "mm",
+            "value": 0.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              -120.0,
+              80.0
+            ],
+            "name": "distance",
+            "unit": "mm",
+            "value": 0.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          5767.972971999999,
+          72.0,
+          1013.7786390000001
+        ],
+        "min": [
+          5617.823483999999,
+          -61.0,
+          484.08941400000003
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          5771.848458405568,
+          72.0,
+          973.9668241064255
+        ],
+        "min": [
+          5621.698970405568,
+          -61.0,
+          444.27759910642544
+        ]
+      }
+    },
+    {
+      "joint": "Nosewheel steering",
+      "probe": 20.0,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 171,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              -75.0,
+              75.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              -75.0,
+              75.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          5789.999999999999,
+          290.0,
+          706.30759
+        ],
+        "min": [
+          5511.524282999999,
+          -290.0,
+          246.40000000000003
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          5810.654128238392,
+          223.43979879121048,
+          706.3019045167832
+        ],
+        "min": [
+          5430.838933791393,
+          -344.08750552039214,
+          237.8394090820953
+        ]
+      }
+    },
+    {
+      "joint": "Nose Port wheel spin",
+      "probe": 20.0,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 172,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              -360.0,
+              360.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              -360.0,
+              360.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          5829.399999999999,
+          -110.8856,
+          558.8
+        ],
+        "min": [
+          5270.599999999999,
+          -289.1144,
+          3.260169911811773e-14
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          5829.333510330961,
+          -110.8856,
+          558.7335103309631
+        ],
+        "min": [
+          5270.666489669036,
+          -289.1144,
+          0.06648966903685505
+        ]
+      }
+    },
+    {
+      "joint": "Nose Starboard wheel spin",
+      "probe": 20.0,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 173,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              -360.0,
+              360.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              -360.0,
+              360.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          5829.399999999999,
+          289.1144,
+          558.8
+        ],
+        "min": [
+          5270.599999999999,
+          110.8856,
+          3.260169911811773e-14
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          5829.333510330961,
+          289.1144,
+          558.7335103309631
+        ],
+        "min": [
+          5270.666489669036,
+          110.8856,
+          0.06648966903685505
+        ]
+      }
+    },
+    {
+      "joint": "Launch bar lift",
+      "probe": 20.0,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 174,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              0.0,
+              125.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              0.0,
+              125.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 0.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          5729.899999999999,
+          170.0,
+          625.89416
+        ],
+        "min": [
+          4683.999999999999,
+          -170.0,
+          64.00000000000001
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          5728.096809361497,
+          170.0,
+          629.4457522161683
+        ],
+        "min": [
+          4569.27403236427,
+          -170.0,
+          427.0871518042636
+        ]
+      }
+    },
+    {
+      "joint": "Nose Port door",
+      "probe": 65.0,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 175,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              0.0,
+              90.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 83.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              0.0,
+              90.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 83.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          5630.0,
+          -170.36328432989035,
+          1770.6449599541397
+        ],
+        "min": [
+          3380.0,
+          -324.77638454923954,
+          1453.5428049636557
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          5630.0,
+          -94.79626985310233,
+          1783.809460939256
+        ],
+        "min": [
+          3380.0,
+          -322.1892336110991,
+          1469.9606549719674
+        ]
+      }
+    },
+    {
+      "joint": "Nose Starboard door",
+      "probe": 65.0,
+      "moved": true,
+      "restore_report": {
+        "conflicts": [],
+        "errors": [],
+        "joint": 179,
+        "moved": true,
+        "requested": [
+          {
+            "limits": [
+              0.0,
+              90.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 83.0
+          }
+        ],
+        "stopped_by_contact": null,
+        "stopped_by_loop": null,
+        "values": [
+          {
+            "limits": [
+              0.0,
+              90.0
+            ],
+            "name": "angle",
+            "unit": "deg",
+            "value": 83.0
+          }
+        ]
+      },
+      "bbox_before_mm": {
+        "max": [
+          5630.0,
+          324.77638454923954,
+          1770.6449599541397
+        ],
+        "min": [
+          3380.0,
+          170.36328432989035,
+          1453.5428049636557
+        ]
+      },
+      "bbox_after_mm": {
+        "max": [
+          5630.0,
+          322.1892336110991,
+          1783.809460939256
+        ],
+        "min": [
+          3380.0,
+          94.79626985310233,
+          1469.9606549719674
+        ]
+      }
+    }
+  ],
+  "source_imports": [
+    {
+      "component": "Airframe",
+      "file": "obj/Airframe.obj",
+      "bodies": 1,
+      "occurrence": 2
+    },
+    {
+      "component": "Port main gear",
+      "file": "obj/Port_main_gear.obj",
+      "bodies": 8,
+      "occurrence": 5
+    },
+    {
+      "component": "Port main shrink strut",
+      "file": "obj/Port_main_shrink_strut.obj",
+      "bodies": 3,
+      "occurrence": 8
+    },
+    {
+      "component": "Port main planing cradle",
+      "file": "obj/Port_main_planing_cradle.obj",
+      "bodies": 3,
+      "occurrence": 11
+    },
+    {
+      "component": "Port main suspension arm",
+      "file": "obj/Port_main_suspension_arm.obj",
+      "bodies": 8,
+      "occurrence": 14
+    },
+    {
+      "component": "Port main oleo barrel",
+      "file": "obj/Port_main_oleo_barrel.obj",
+      "bodies": 5,
+      "occurrence": 17
+    },
+    {
+      "component": "Port main oleo piston",
+      "file": "obj/Port_main_oleo_piston.obj",
+      "bodies": 4,
+      "occurrence": 20
+    },
+    {
+      "component": "Port main drag brace upper",
+      "file": "obj/Port_main_drag_brace_upper.obj",
+      "bodies": 3,
+      "occurrence": 23
+    },
+    {
+      "component": "Port main drag brace lower",
+      "file": "obj/Port_main_drag_brace_lower.obj",
+      "bodies": 3,
+      "occurrence": 26
+    },
+    {
+      "component": "Port main wheel",
+      "file": "obj/Port_main_wheel.obj",
+      "bodies": 9,
+      "occurrence": 29
+    },
+    {
+      "component": "Port main gear door",
+      "file": "obj/Port_main_gear_door.obj",
+      "bodies": 4,
+      "occurrence": 32
+    },
+    {
+      "component": "Port main door actuator barrel",
+      "file": "obj/Port_main_door_actuator_barrel.obj",
+      "bodies": 5,
+      "occurrence": 35
+    },
+    {
+      "component": "Port main door actuator piston",
+      "file": "obj/Port_main_door_actuator_piston.obj",
+      "bodies": 4,
+      "occurrence": 38
+    },
+    {
+      "component": "Starboard main gear",
+      "file": "obj/Starboard_main_gear.obj",
+      "bodies": 8,
+      "occurrence": 41
+    },
+    {
+      "component": "Starboard main shrink strut",
+      "file": "obj/Starboard_main_shrink_strut.obj",
+      "bodies": 3,
+      "occurrence": 44
+    },
+    {
+      "component": "Starboard main planing cradle",
+      "file": "obj/Starboard_main_planing_cradle.obj",
+      "bodies": 3,
+      "occurrence": 47
+    },
+    {
+      "component": "Starboard main suspension arm",
+      "file": "obj/Starboard_main_suspension_arm.obj",
+      "bodies": 8,
+      "occurrence": 50
+    },
+    {
+      "component": "Starboard main oleo barrel",
+      "file": "obj/Starboard_main_oleo_barrel.obj",
+      "bodies": 5,
+      "occurrence": 53
+    },
+    {
+      "component": "Starboard main oleo piston",
+      "file": "obj/Starboard_main_oleo_piston.obj",
+      "bodies": 4,
+      "occurrence": 56
+    },
+    {
+      "component": "Starboard main drag brace upper",
+      "file": "obj/Starboard_main_drag_brace_upper.obj",
+      "bodies": 3,
+      "occurrence": 59
+    },
+    {
+      "component": "Starboard main drag brace lower",
+      "file": "obj/Starboard_main_drag_brace_lower.obj",
+      "bodies": 3,
+      "occurrence": 62
+    },
+    {
+      "component": "Starboard main wheel",
+      "file": "obj/Starboard_main_wheel.obj",
+      "bodies": 9,
+      "occurrence": 65
+    },
+    {
+      "component": "Starboard main gear door",
+      "file": "obj/Starboard_main_gear_door.obj",
+      "bodies": 4,
+      "occurrence": 68
+    },
+    {
+      "component": "Starboard main door actuator barrel",
+      "file": "obj/Starboard_main_door_actuator_barrel.obj",
+      "bodies": 5,
+      "occurrence": 71
+    },
+    {
+      "component": "Starboard main door actuator piston",
+      "file": "obj/Starboard_main_door_actuator_piston.obj",
+      "bodies": 4,
+      "occurrence": 74
+    },
+    {
+      "component": "Nose gear leg",
+      "file": "obj/Nose_gear_leg.obj",
+      "bodies": 7,
+      "occurrence": 77
+    },
+    {
+      "component": "Nose oleo piston",
+      "file": "obj/Nose_oleo_piston.obj",
+      "bodies": 3,
+      "occurrence": 80
+    },
+    {
+      "component": "Nose torque scissors upper",
+      "file": "obj/Nose_torque_scissors_upper.obj",
+      "bodies": 3,
+      "occurrence": 83
+    },
+    {
+      "component": "Nose torque scissors lower",
+      "file": "obj/Nose_torque_scissors_lower.obj",
+      "bodies": 3,
+      "occurrence": 86
+    },
+    {
+      "component": "Nose drag brace upper",
+      "file": "obj/Nose_drag_brace_upper.obj",
+      "bodies": 3,
+      "occurrence": 89
+    },
+    {
+      "component": "Nose drag brace lower",
+      "file": "obj/Nose_drag_brace_lower.obj",
+      "bodies": 3,
+      "occurrence": 92
+    },
+    {
+      "component": "Nose retract actuator barrel",
+      "file": "obj/Nose_retract_actuator_barrel.obj",
+      "bodies": 5,
+      "occurrence": 95
+    },
+    {
+      "component": "Nose retract actuator piston",
+      "file": "obj/Nose_retract_actuator_piston.obj",
+      "bodies": 4,
+      "occurrence": 98
+    },
+    {
+      "component": "Nose wheel steering",
+      "file": "obj/Nose_wheel_steering.obj",
+      "bodies": 4,
+      "occurrence": 101
+    },
+    {
+      "component": "Nose Port wheel",
+      "file": "obj/Nose_Port_wheel.obj",
+      "bodies": 8,
+      "occurrence": 104
+    },
+    {
+      "component": "Nose Starboard wheel",
+      "file": "obj/Nose_Starboard_wheel.obj",
+      "bodies": 8,
+      "occurrence": 107
+    },
+    {
+      "component": "Launch bar",
+      "file": "obj/Launch_bar.obj",
+      "bodies": 5,
+      "occurrence": 110
+    },
+    {
+      "component": "Nose Port door",
+      "file": "obj/Nose_Port_door.obj",
+      "bodies": 4,
+      "occurrence": 113
+    },
+    {
+      "component": "Nose Port door actuator barrel",
+      "file": "obj/Nose_Port_door_actuator_barrel.obj",
+      "bodies": 5,
+      "occurrence": 116
+    },
+    {
+      "component": "Nose Port door actuator piston",
+      "file": "obj/Nose_Port_door_actuator_piston.obj",
+      "bodies": 4,
+      "occurrence": 119
+    },
+    {
+      "component": "Nose Starboard door",
+      "file": "obj/Nose_Starboard_door.obj",
+      "bodies": 4,
+      "occurrence": 122
+    },
+    {
+      "component": "Nose Starboard door actuator barrel",
+      "file": "obj/Nose_Starboard_door_actuator_barrel.obj",
+      "bodies": 5,
+      "occurrence": 125
+    },
+    {
+      "component": "Nose Starboard door actuator piston",
+      "file": "obj/Nose_Starboard_door_actuator_piston.obj",
+      "bodies": 4,
+      "occurrence": 128
+    }
+  ],
+  "threads": 2,
+  "niceness": 10,
+  "no_rendering": true,
+  "release_proof": {
+    "tag": "v0.40.0-rc.3",
+    "commit": "7001949c49e211a430fe4747221589b2b9384f2c",
+    "url": "https://github.com/tangency-labs/solidcraft/releases/tag/v0.40.0-rc.3",
+    "archive": "solidcraft-0.40.0-rc.3-linux-x86_64.tar.gz",
+    "archive_sha256": "75bafe8b13ae9b120ccc5487ba9f0745b942b4f794d2c4c87cd6c1151089a32b",
+    "cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+    "version": "solidcraft-cli 0.40.0-rc.3",
+    "format": "solidcraft/51",
+    "cli_path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/runtime/official-rc3/solidcraft-0.40.0-rc.3-linux-x86_64/bin/solidcraft-cli",
+    "verified_cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+    "verified_version": "solidcraft-cli 0.40.0-rc.3"
+  },
+  "server": {
+    "capabilities": {
+      "resources": {
+        "listChanged": false
+      },
+      "tools": {
+        "listChanged": false
+      }
+    },
+    "instructions": "SolidCraft is an independent parametric 3D CAD app, and these tools drive it: when its window is open the user watches the model appear, otherwise a headless session builds it. When asked to design or build a part, do it with these tools straight away. Units are millimetres and degrees in expressions, Z is up.\n\nStart: for anything beyond one primitive, call `skill_reference {\"skill\":\"solidcraft-modeling\"}` first (command shapes, ids, plane axes, worked examples and the known traps of this version; `file: \"SKILL.md\"` has the workflow). Then `inspect_design {\"measure\":false,\"sketches\":false}` to see what is already there.\n\nPlan: work the numbers out first (the parameters, the expected volume and bounding box after each stage, the world point you will use for each edge or face pick). Then build in a few `batch` calls (all-or-nothing; the reply names the failing step; `save`, `measure` and `set_parameter` can be steps). Use `verbose: false`. Name every feature. `list_commands {\"filter\": word}` gives ids and one-line parameter docs (never unfiltered: it also takes prefix, panel, compact: true and limit); `describe_command` gives one command's docs and schemas.\n\nRoutes: a plate, block, boss, standoff or hole is cheapest as a primitive with expression fields (`solid.box`, `solid.cylinder`, `solid.hole`, `solid.fillet`, `solid.shell`, patterns and mirror), no sketch. Sketch when the profile is not a box or a circle. Fillet outside edges before shelling, build inside features after the shell, then the holes and cuts through walls. Give a blind hole or a hole through one wall of a hollow part its depth.\n\nParametric: a size or position that must follow a parameter is an expression in a feature field (`\"L/2 - 10\"`), a sketch dimension to `\"origin\"` or an edge, or a pattern spacing; a plain number never follows a parameter. Every sketch must end at dof 0 (`sketch.solve` reports it). A pick (`edges: [[x,y,z]]`, `faces: [[x,y,z]]`) is a number that snaps to the nearest edge or face and follows it when parameters change.\n\nVerify: `measure {}` after each stage and compare volume and bbox with your numbers; `ok: true` alone proves nothing: a cut that leaves the volume unchanged has missed, a join that adds a body did not touch. Positions of holes and bosses come from `body_topology` (cylinder origin, axis and radius), not from the volume or the centre of mass of a symmetric part. To check that the design follows its parameters, `check_parameters {\"set\": {name: value}}` tries the values and puts the design back (volume, errors, cylinder axes), or change them in one `batch` with `coalesce_parameters: true` (one rebuild), `measure`, then set them back the same way before saving.\n\nFix, don't rebuild: a wrong number in a feature is changed with `timeline.edit` or `parameters.change` on its input (`parameters.list {\"filter\":\"feature\"}` names them); `edit.checkpoint` and `edit.restore_checkpoint` go back exactly.\n\nA call whose error starts `still running:` was not cancelled: don't send it again; `pending` waits for its result. Backend: headless in-process SolidCraft session.",
+    "protocolVersion": "2025-06-18",
+    "serverInfo": {
+      "name": "solidcraft",
+      "title": "SolidCraft",
+      "version": "0.40.0-rc.3"
+    }
+  },
+  "physical_materials": {
+    "Steel": 117,
+    "ABS Plastic": 10,
+    "Stainless Steel": 54,
+    "Aluminum": 16,
+    "Brass": 4
+  },
+  "automatic_rigid_joints": [],
+  "assembly_checkpoint": {
+    "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/verification/landing-gear-mechanism/gear-receipts/assembly-checkpoint.sc",
+    "bytes": 1072623,
+    "sha256": "4b1c415ab93dad3a6f4bc486cd1a693deadbbd9ea1911feed5ebb3f2587f19be",
+    "cache": false,
+    "native_reply": {
+      "bytes": 1072623,
+      "name": "F/A-18C / USS John C. Stennis — RC3 detailed structural model",
+      "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/verification/landing-gear-mechanism/gear-receipts/assembly-checkpoint.sc"
+    },
+    "format": "solidcraft/51",
+    "container": "solidcraft-container/1",
+    "mesh_blobs": 201,
+    "entries": 203
+  },
+  "verification": {
+    "stored_bodies": 201,
+    "visible_bodies": 201,
+    "hidden_bodies": 0,
+    "native_joints": 53,
+    "motion_links": 4,
+    "named_views": 1,
+    "motion_studies": 2,
+    "floating_chains": 0,
+    "joint_conflicts": 0
+  },
+  "saved_native": {
+    "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/verification/landing-gear-mechanism/gear.sc",
+    "bytes": 1075851,
+    "sha256": "7ec1356ab27c8e3f2c5111a864edcb57ba09a3a202325458daede39359f8f462",
+    "cache": false,
+    "native_reply": {
+      "bytes": 1075851,
+      "name": "F/A-18C / USS John C. Stennis — RC3 detailed structural model",
+      "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/verification/landing-gear-mechanism/gear.sc"
+    },
+    "format": "solidcraft/51",
+    "container": "solidcraft-container/1",
+    "mesh_blobs": 201,
+    "entries": 203
+  },
+  "fresh_reopen": {
+    "open": {
+      "errors": 0,
+      "features": 43,
+      "name": "F/A-18C / USS John C. Stennis — RC3 detailed structural model",
+      "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/verification/landing-gear-mechanism/gear.sc",
+      "read_only": true
+    },
+    "exact_persisted_state_match": true,
+    "file_unchanged": true,
+    "stored_bodies": 201,
+    "visible_bodies": 201,
+    "hidden_bodies": 0,
+    "native_joints": 53,
+    "motion_links": 4,
+    "named_views": 1,
+    "motion_studies": 2,
+    "floating_chains": 0,
+    "joint_conflicts": 0
+  },
+  "finished": "2026-11-09T17:56:37Z",
+  "elapsed_seconds": 2.09
+}

@@ -1,0 +1,341 @@
+{
+  "requested_release": "v0.40.0-rc.3",
+  "release_commit": "7001949c49e211a430fe4747221589b2b9384f2c",
+  "scene_statistics": {
+    "components": 914,
+    "bodies": 3208,
+    "joints": 931,
+    "articulated_joints": 800,
+    "triangles": 3151204,
+    "vertices": 2311762,
+    "modeled_detail_instances": 29499,
+    "motion_links": 400,
+    "passive_loop_joints": 57
+  },
+  "geometry": {
+    "finite_vertices": true,
+    "valid_indices": true,
+    "degenerate_triangles": 0,
+    "triangles": 3151204,
+    "vertices": 2311762,
+    "joint_references_valid": true,
+    "motion_links_valid": true,
+    "negative_signed_volume_body_count": 0,
+    "negative_signed_volume_bodies": []
+  },
+  "native_files": [
+    {
+      "file": "native/FA18C_Stennis_RC3_Master.sc",
+      "description": "Complete aircraft on the Stennis launch deck; closed launch configuration",
+      "bytes": 45890271,
+      "sha256": "34d3bd0c510a32aa4f41fffd9527647a4c88c2a88ea86bb321ac426dc77f1c8d",
+      "verification": {
+        "stored_bodies": 3208,
+        "visible_bodies": 3208,
+        "hidden_bodies": 0,
+        "native_joints": 931,
+        "motion_links": 400,
+        "named_views": 20,
+        "motion_studies": 15,
+        "floating_chains": 0,
+        "joint_conflicts": 0
+      },
+      "release": {
+        "tag": "v0.40.0-rc.3",
+        "commit": "7001949c49e211a430fe4747221589b2b9384f2c",
+        "url": "https://github.com/tangency-labs/solidcraft/releases/tag/v0.40.0-rc.3",
+        "archive": "solidcraft-0.40.0-rc.3-linux-x86_64.tar.gz",
+        "archive_sha256": "75bafe8b13ae9b120ccc5487ba9f0745b942b4f794d2c4c87cd6c1151089a32b",
+        "cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+        "version": "solidcraft-cli 0.40.0-rc.3",
+        "format": "solidcraft/51",
+        "cli_path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/runtime/official-rc3/solidcraft-0.40.0-rc.3-linux-x86_64/bin/solidcraft-cli",
+        "verified_cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+        "verified_version": "solidcraft-cli 0.40.0-rc.3"
+      },
+      "fresh_reopen": {
+        "open": {
+          "errors": 0,
+          "features": 914,
+          "name": "F/A-18C NG301 and CVN-74 Stennis - detailed RC3 revision",
+          "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/native/FA18C_Stennis_RC3_Master.sc",
+          "read_only": true
+        },
+        "exact_persisted_state_match": true,
+        "file_unchanged": true,
+        "stored_bodies": 3208,
+        "visible_bodies": 3208,
+        "hidden_bodies": 0,
+        "native_joints": 931,
+        "motion_links": 400,
+        "named_views": 20,
+        "motion_studies": 15,
+        "floating_chains": 0,
+        "joint_conflicts": 0
+      },
+      "driven_joint_probes": 343,
+      "native_format": "solidcraft/51"
+    },
+    {
+      "file": "native/FA18C_RC3_Aircraft.sc",
+      "description": "Aircraft alone, with the same complete internal assemblies",
+      "bytes": 42121630,
+      "sha256": "9e991f5a2ac9f607ed01557f642b290d4d720f936320c516562f643980d4179a",
+      "verification": {
+        "stored_bodies": 2994,
+        "visible_bodies": 2994,
+        "hidden_bodies": 0,
+        "native_joints": 917,
+        "motion_links": 400,
+        "named_views": 20,
+        "motion_studies": 16,
+        "floating_chains": 0,
+        "joint_conflicts": 0
+      },
+      "release": {
+        "tag": "v0.40.0-rc.3",
+        "commit": "7001949c49e211a430fe4747221589b2b9384f2c",
+        "url": "https://github.com/tangency-labs/solidcraft/releases/tag/v0.40.0-rc.3",
+        "archive": "solidcraft-0.40.0-rc.3-linux-x86_64.tar.gz",
+        "archive_sha256": "75bafe8b13ae9b120ccc5487ba9f0745b942b4f794d2c4c87cd6c1151089a32b",
+        "cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+        "version": "solidcraft-cli 0.40.0-rc.3",
+        "format": "solidcraft/51",
+        "cli_path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/runtime/official-rc3/solidcraft-0.40.0-rc.3-linux-x86_64/bin/solidcraft-cli",
+        "verified_cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+        "verified_version": "solidcraft-cli 0.40.0-rc.3"
+      },
+      "fresh_reopen": {
+        "open": {
+          "errors": 0,
+          "features": 899,
+          "name": "FA18C_RC3_Aircraft",
+          "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/native/FA18C_RC3_Aircraft.sc",
+          "read_only": true
+        },
+        "exact_persisted_state_match": true,
+        "file_unchanged": true,
+        "stored_bodies": 2994,
+        "visible_bodies": 2994,
+        "hidden_bodies": 0,
+        "native_joints": 917,
+        "motion_links": 400,
+        "named_views": 20,
+        "motion_studies": 16,
+        "floating_chains": 0,
+        "joint_conflicts": 0
+      },
+      "driven_joint_probes": 0,
+      "native_format": "solidcraft/51"
+    },
+    {
+      "file": "native/FA18C_RC3_Cockpit.sc",
+      "description": "Canopy open and pilot hidden; reference-guided cockpit and NACES seat accessible",
+      "bytes": 42122052,
+      "sha256": "483f4380c466edc1caea9e9f1b2afa4df56887f7738d37ba9990d6cea6866df6",
+      "verification": {
+        "stored_bodies": 2994,
+        "visible_bodies": 2983,
+        "hidden_bodies": 11,
+        "native_joints": 917,
+        "motion_links": 400,
+        "named_views": 20,
+        "motion_studies": 16,
+        "floating_chains": 0,
+        "joint_conflicts": 0
+      },
+      "release": {
+        "tag": "v0.40.0-rc.3",
+        "commit": "7001949c49e211a430fe4747221589b2b9384f2c",
+        "url": "https://github.com/tangency-labs/solidcraft/releases/tag/v0.40.0-rc.3",
+        "archive": "solidcraft-0.40.0-rc.3-linux-x86_64.tar.gz",
+        "archive_sha256": "75bafe8b13ae9b120ccc5487ba9f0745b942b4f794d2c4c87cd6c1151089a32b",
+        "cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+        "version": "solidcraft-cli 0.40.0-rc.3",
+        "format": "solidcraft/51",
+        "cli_path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/runtime/official-rc3/solidcraft-0.40.0-rc.3-linux-x86_64/bin/solidcraft-cli",
+        "verified_cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+        "verified_version": "solidcraft-cli 0.40.0-rc.3"
+      },
+      "fresh_reopen": {
+        "open": {
+          "errors": 0,
+          "features": 899,
+          "name": "FA18C_RC3_Cockpit",
+          "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/native/FA18C_RC3_Cockpit.sc",
+          "read_only": true
+        },
+        "exact_persisted_state_match": true,
+        "file_unchanged": true,
+        "stored_bodies": 2994,
+        "visible_bodies": 2983,
+        "hidden_bodies": 11,
+        "native_joints": 917,
+        "motion_links": 400,
+        "named_views": 20,
+        "motion_studies": 16,
+        "floating_chains": 0,
+        "joint_conflicts": 0
+      },
+      "driven_joint_probes": 0,
+      "native_format": "solidcraft/51"
+    },
+    {
+      "file": "native/FA18C_RC3_Internal_Systems.sc",
+      "description": "Skins removed on the inspection side; installed systems and engine cores exposed",
+      "bytes": 42123335,
+      "sha256": "bbeedb0485ee64901f830567329040cfe329c291a2191c2df00b571ea8f818ae",
+      "verification": {
+        "stored_bodies": 2994,
+        "visible_bodies": 2858,
+        "hidden_bodies": 136,
+        "native_joints": 917,
+        "motion_links": 400,
+        "named_views": 20,
+        "motion_studies": 16,
+        "floating_chains": 0,
+        "joint_conflicts": 0
+      },
+      "release": {
+        "tag": "v0.40.0-rc.3",
+        "commit": "7001949c49e211a430fe4747221589b2b9384f2c",
+        "url": "https://github.com/tangency-labs/solidcraft/releases/tag/v0.40.0-rc.3",
+        "archive": "solidcraft-0.40.0-rc.3-linux-x86_64.tar.gz",
+        "archive_sha256": "75bafe8b13ae9b120ccc5487ba9f0745b942b4f794d2c4c87cd6c1151089a32b",
+        "cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+        "version": "solidcraft-cli 0.40.0-rc.3",
+        "format": "solidcraft/51",
+        "cli_path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/runtime/official-rc3/solidcraft-0.40.0-rc.3-linux-x86_64/bin/solidcraft-cli",
+        "verified_cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+        "verified_version": "solidcraft-cli 0.40.0-rc.3"
+      },
+      "fresh_reopen": {
+        "open": {
+          "errors": 0,
+          "features": 899,
+          "name": "FA18C_RC3_Internal_Systems",
+          "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/native/FA18C_RC3_Internal_Systems.sc",
+          "read_only": true
+        },
+        "exact_persisted_state_match": true,
+        "file_unchanged": true,
+        "stored_bodies": 2994,
+        "visible_bodies": 2858,
+        "hidden_bodies": 136,
+        "native_joints": 917,
+        "motion_links": 400,
+        "named_views": 20,
+        "motion_studies": 16,
+        "floating_chains": 0,
+        "joint_conflicts": 0
+      },
+      "driven_joint_probes": 0,
+      "native_format": "solidcraft/51"
+    },
+    {
+      "file": "native/FA18C_RC3_Structure.sc",
+      "description": "Fuel cells and ducts additionally hidden to reveal frames, spars and ribs",
+      "bytes": 42123759,
+      "sha256": "36f6ed14bafbb508e3ce1fe60d6c347e904643feeaa94a855580ce2789cf09cb",
+      "verification": {
+        "stored_bodies": 2994,
+        "visible_bodies": 2816,
+        "hidden_bodies": 178,
+        "native_joints": 917,
+        "motion_links": 400,
+        "named_views": 20,
+        "motion_studies": 16,
+        "floating_chains": 0,
+        "joint_conflicts": 0
+      },
+      "release": {
+        "tag": "v0.40.0-rc.3",
+        "commit": "7001949c49e211a430fe4747221589b2b9384f2c",
+        "url": "https://github.com/tangency-labs/solidcraft/releases/tag/v0.40.0-rc.3",
+        "archive": "solidcraft-0.40.0-rc.3-linux-x86_64.tar.gz",
+        "archive_sha256": "75bafe8b13ae9b120ccc5487ba9f0745b942b4f794d2c4c87cd6c1151089a32b",
+        "cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+        "version": "solidcraft-cli 0.40.0-rc.3",
+        "format": "solidcraft/51",
+        "cli_path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/runtime/official-rc3/solidcraft-0.40.0-rc.3-linux-x86_64/bin/solidcraft-cli",
+        "verified_cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+        "verified_version": "solidcraft-cli 0.40.0-rc.3"
+      },
+      "fresh_reopen": {
+        "open": {
+          "errors": 0,
+          "features": 899,
+          "name": "FA18C_RC3_Structure",
+          "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/native/FA18C_RC3_Structure.sc",
+          "read_only": true
+        },
+        "exact_persisted_state_match": true,
+        "file_unchanged": true,
+        "stored_bodies": 2994,
+        "visible_bodies": 2816,
+        "hidden_bodies": 178,
+        "native_joints": 917,
+        "motion_links": 400,
+        "named_views": 20,
+        "motion_studies": 16,
+        "floating_chains": 0,
+        "joint_conflicts": 0
+      },
+      "driven_joint_probes": 0,
+      "native_format": "solidcraft/51"
+    },
+    {
+      "file": "native/F404_RC3_Engines.sc",
+      "description": "Both engines isolated by visibility, with upper casing and liner quadrants removed",
+      "bytes": 42140188,
+      "sha256": "1ed995aa32ce85d7dfed02535261e34323c9acb335f1a8e935c3ee740b1b6bd2",
+      "verification": {
+        "stored_bodies": 2994,
+        "visible_bodies": 1072,
+        "hidden_bodies": 1922,
+        "native_joints": 917,
+        "motion_links": 400,
+        "named_views": 20,
+        "motion_studies": 16,
+        "floating_chains": 0,
+        "joint_conflicts": 0
+      },
+      "release": {
+        "tag": "v0.40.0-rc.3",
+        "commit": "7001949c49e211a430fe4747221589b2b9384f2c",
+        "url": "https://github.com/tangency-labs/solidcraft/releases/tag/v0.40.0-rc.3",
+        "archive": "solidcraft-0.40.0-rc.3-linux-x86_64.tar.gz",
+        "archive_sha256": "75bafe8b13ae9b120ccc5487ba9f0745b942b4f794d2c4c87cd6c1151089a32b",
+        "cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+        "version": "solidcraft-cli 0.40.0-rc.3",
+        "format": "solidcraft/51",
+        "cli_path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/runtime/official-rc3/solidcraft-0.40.0-rc.3-linux-x86_64/bin/solidcraft-cli",
+        "verified_cli_sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+        "verified_version": "solidcraft-cli 0.40.0-rc.3"
+      },
+      "fresh_reopen": {
+        "open": {
+          "errors": 0,
+          "features": 899,
+          "name": "F404_RC3_Engines",
+          "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/native/F404_RC3_Engines.sc",
+          "read_only": true
+        },
+        "exact_persisted_state_match": true,
+        "file_unchanged": true,
+        "stored_bodies": 2994,
+        "visible_bodies": 1072,
+        "hidden_bodies": 1922,
+        "native_joints": 917,
+        "motion_links": 400,
+        "named_views": 20,
+        "motion_studies": 16,
+        "floating_chains": 0,
+        "joint_conflicts": 0
+      },
+      "driven_joint_probes": 0,
+      "native_format": "solidcraft/51"
+    }
+  ],
+  "no_rendering": true
+}

@@ -1,0 +1,36 @@
+{
+  "change": "Recess rubber fuel-cell roofs around dorsal transverse beams",
+  "beam_lower_flange_z_m": 2.446,
+  "results": [
+    {
+      "component": "Fuselage fuel cell 1",
+      "duct_intrusion_vertices": 0,
+      "beam_recess_roof_z_m": {}
+    },
+    {
+      "component": "Fuselage fuel cell 2 left feed",
+      "duct_intrusion_vertices": 0,
+      "beam_recess_roof_z_m": {
+        "9.02": 2.4300000000000006,
+        "9.7": 2.4300000000000006
+      }
+    },
+    {
+      "component": "Fuselage fuel cell 3 right feed",
+      "duct_intrusion_vertices": 0,
+      "beam_recess_roof_z_m": {
+        "9.02": 2.4300000000000006,
+        "9.7": 2.4300000000000006
+      }
+    },
+    {
+      "component": "Fuselage fuel cell 4",
+      "duct_intrusion_vertices": 0,
+      "beam_recess_roof_z_m": {
+        "10.42": 2.4300000000000006,
+        "11.22": 2.4300000000000006
+      }
+    }
+  ],
+  "source_sha256": "68f98dc04615b4628751656097e7afed6f03d5590331891b9bff190515bdf7a2"
+}

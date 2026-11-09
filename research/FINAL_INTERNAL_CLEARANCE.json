@@ -1,0 +1,204 @@
+{
+  "scope": "Neutral assembly numerical clearance audit; no rendering. Skin comparisons use 6 mm inset; engine aft of X16.055 is the intended exposed nozzle.",
+  "date": "2026-11-09",
+  "source_sha256": {
+    "engines.py": "4c3e9306acb6dfad3b99ed182311571b4b217be1a14cde89693d9caa7deb7a5d",
+    "internals.py": "41b5c3dd14468241f2e5e8763d63876b15b2aab591cde3637742c774ef87dfe7",
+    "aircraft.py": "1c5e4330bf935b9929715d62c874eb8e5789236432e3f377dc165623a46fefbc",
+    "scene_api.py": "c153732b0bb968a196d4a8462827812080a3d979aac289cd16e8550a83ca9610"
+  },
+  "previous_large_interference_issues_resolved": true,
+  "unresolved_outer_skin_penetrations_over_20mm": [],
+  "unresolved_intake_intrusions_over_10mm": [],
+  "corrected_group_clearances": {
+    "forward_avionics_trays": {
+      "minimum_skin_clearance_m": 0.03584653778749319,
+      "maximum_intake_intrusion_m": 0.0
+    },
+    "forward_avionics_supports": {
+      "minimum_skin_clearance_m": 0.018780245810144314,
+      "maximum_intake_intrusion_m": 0.0
+    },
+    "radar_forward_bulkhead": {
+      "minimum_skin_clearance_m": 0.009749999999999981,
+      "maximum_intake_intrusion_m": 0.0
+    },
+    "AMAD_hydraulic_pumps": {
+      "minimum_skin_clearance_m": 0.02453982399645782,
+      "maximum_intake_intrusion_m": 0.0
+    },
+    "AMAD_drive_couplings": {
+      "minimum_skin_clearance_m": 0.0836240533998267,
+      "maximum_intake_intrusion_m": 0.0
+    },
+    "APU_body_and_bell": {
+      "minimum_skin_clearance_m": 0.016368421052631366,
+      "maximum_intake_intrusion_m": 0.0
+    },
+    "fuel4_all_parts": {
+      "minimum_skin_clearance_m": 0.04724953588454195,
+      "maximum_intake_intrusion_m": 0.0
+    }
+  },
+  "fuel_cell_vertex_and_face_centroid_checks": [
+    {
+      "component": "Fuselage fuel cell 1",
+      "minimum_skin_clearance_m": -0.0008214630801040013,
+      "at_m": [
+        6.98,
+        -0.7296,
+        2.5072
+      ],
+      "maximum_intake_intrusion_m": 0.0,
+      "at_intake_m": [
+        8.42,
+        0.7296,
+        2.5072
+      ]
+    },
+    {
+      "component": "Fuselage fuel cell 2 left feed",
+      "minimum_skin_clearance_m": 0.08216424448072479,
+      "at_m": [
+        10.3,
+        -0.26880000000000004,
+        2.584
+      ],
+      "maximum_intake_intrusion_m": 0.0,
+      "at_intake_m": [
+        10.3,
+        -0.033600000000000005,
+        2.5936
+      ]
+    },
+    {
+      "component": "Fuselage fuel cell 3 right feed",
+      "minimum_skin_clearance_m": 0.08216424448072479,
+      "at_m": [
+        10.3,
+        0.26880000000000004,
+        2.584
+      ],
+      "maximum_intake_intrusion_m": 0.0,
+      "at_intake_m": [
+        10.3,
+        0.26880000000000004,
+        2.584
+      ]
+    },
+    {
+      "component": "Fuselage fuel cell 4",
+      "minimum_skin_clearance_m": 0.051233660522917335,
+      "at_m": [
+        12.66,
+        -0.5088,
+        2.4592
+      ],
+      "maximum_intake_intrusion_m": 0.0,
+      "at_intake_m": [
+        12.660000000000002,
+        0.2144,
+        2.456
+      ]
+    }
+  ],
+  "engine_skin_minimum_clearance_m": [
+    0.04351664385869658,
+    "Port_F404_mounts__Mounting_pin_heads",
+    [
+      15.0314,
+      -0.7205,
+      1.5418134665205268
+    ]
+  ],
+  "engine_skin_penetrations": [],
+  "firewall_inner_radius_m": 0.381,
+  "firewall_outer_radius_m": 0.433,
+  "engine_max_radius_in_firewall_slab_m": 0.3745923661205005,
+  "firewall_radial_clearance_m": 0.006407633879499497,
+  "firewall_overlap_vertices": [],
+  "duct_terminal_geometry": [
+    12.7684,
+    0.3556,
+    1.98,
+    0.3556,
+    0.0
+  ],
+  "intentional_wing_transfer_routes": [
+    {
+      "body": "Fuel_pumps_valves_and_distribution__Port_wing_transfer_feed",
+      "minimum_skin_clearance_m": -0.5459655172411182,
+      "skin_point_m": [
+        10.570098235170176,
+        -1.550669710822529,
+        2.523983627471637
+      ],
+      "maximum_intake_intrusion_m": 0.0
+    },
+    {
+      "body": "Fuel_pumps_valves_and_distribution__Starboard_wing_transfer_feed",
+      "minimum_skin_clearance_m": -0.5459655172411182,
+      "skin_point_m": [
+        10.570098235170176,
+        1.550669710822529,
+        2.523983627471637
+      ],
+      "maximum_intake_intrusion_m": 0.0
+    }
+  ],
+  "intentional_APU_belly_outlet": [
+    {
+      "body": "APU_and_starting_equipment__APU_exhaust_elbow",
+      "minimum_skin_clearance_m": -0.008474462997976384,
+      "skin_point_m": [
+        12.271819805153395,
+        -0.03181980515339464,
+        1.49
+      ],
+      "maximum_intake_intrusion_m": 0.0
+    }
+  ],
+  "remaining_small_contacts": [
+    {
+      "body": "Airframe_accessory_drives__Port_AMAD_gearbox_casing",
+      "minimum_skin_clearance_m": -0.0011023633368947294,
+      "skin_point_m": [
+        12.485000000000001,
+        -0.85,
+        1.445
+      ],
+      "maximum_intake_intrusion_m": 0.0
+    },
+    {
+      "body": "Airframe_accessory_drives__Starboard_AMAD_gearbox_casing",
+      "minimum_skin_clearance_m": -0.0011023633368947294,
+      "skin_point_m": [
+        12.485000000000001,
+        0.85,
+        1.445
+      ],
+      "maximum_intake_intrusion_m": 0.0
+    },
+    {
+      "body": "Fuselage_fuel_cell_1__Shaped_rubber_bladder_envelope",
+      "minimum_skin_clearance_m": -0.0008214630801040013,
+      "skin_point_m": [
+        6.98,
+        -0.7296,
+        2.5072
+      ],
+      "maximum_intake_intrusion_m": 0.0
+    },
+    {
+      "body": "Fuselage_fuel_cell_1__Bladder_seam_beads",
+      "minimum_skin_clearance_m": -0.0012795044857086824,
+      "skin_point_m": [
+        7.021818019484661,
+        -0.7347868753988893,
+        2.506162574512083
+      ],
+      "maximum_intake_intrusion_m": 0.0
+    }
+  ],
+  "elapsed_seconds": 15.878
+}

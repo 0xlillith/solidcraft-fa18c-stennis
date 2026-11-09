@@ -1,0 +1,11 @@
+{
+  "finite_vertices": true,
+  "valid_indices": true,
+  "degenerate_triangles": 0,
+  "triangles": 3151204,
+  "vertices": 2311762,
+  "joint_references_valid": true,
+  "motion_links_valid": true,
+  "negative_signed_volume_body_count": 0,
+  "negative_signed_volume_bodies": []
+}

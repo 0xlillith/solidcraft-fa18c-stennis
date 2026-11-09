@@ -1,0 +1,23 @@
+{
+  "tag": "v0.40.0-rc.3",
+  "commit": "7001949c49e211a430fe4747221589b2b9384f2c",
+  "release_url": "https://github.com/tangency-labs/solidcraft/releases/tag/v0.40.0-rc.3",
+  "archive_url": "https://github.com/tangency-labs/solidcraft/releases/download/v0.40.0-rc.3/solidcraft-0.40.0-rc.3-linux-x86_64.tar.gz",
+  "archive_sha256": "75bafe8b13ae9b120ccc5487ba9f0745b942b4f794d2c4c87cd6c1151089a32b",
+  "format": 51,
+  "binaries": [
+    {
+      "path": "/home/selune/Documents/SolidCraft/FA18C-Stennis-RC3-Realism-20261109/runtime/official-rc3/solidcraft-0.40.0-rc.3-linux-x86_64/bin/solidcraft-cli",
+      "sha256": "3f29f4cc262601f9b2e029745a9b56de6f959e14bec74003693d36be12c9f45a",
+      "version": "solidcraft-cli 0.40.0-rc.3",
+      "returncode": 0,
+      "stderr": ""
+    }
+  ],
+  "installed_appimage": {
+    "path": "/home/selune/Applications/solidcraft-0.40.0-rc.3-linux-x86_64.AppImage",
+    "sha256": "67e8dea40b807217d6d6a88ff1f2b6433cdfbf4b475ee25195d3612d886b5f5b",
+    "official_sha256": "67e8dea40b807217d6d6a88ff1f2b6433cdfbf4b475ee25195d3612d886b5f5b",
+    "matches_release": true
+  }
+}

@@ -1,0 +1,2331 @@
+{
+  "build_seconds": 9.689,
+  "components": 424,
+  "bodies": 1136,
+  "triangles": 1563136,
+  "vertices": 863304,
+  "joints": 424,
+  "motion_links": 376,
+  "rotor_stage_bodies_per_engine": 12,
+  "nozzle_sectors_per_engine": 12,
+  "variable_pitch_vanes_per_engine": 140,
+  "dimension_basis": {
+    "length_m": 3.9116,
+    "front_x_m": 12.7684,
+    "exit_x_m": 16.68,
+    "maximum_envelope_diameter_m": 0.889,
+    "centres": [
+      [
+        -0.71,
+        1.98
+      ],
+      [
+        0.71,
+        1.98
+      ]
+    ],
+    "fan_stages": 3,
+    "hpc_stages": 7,
+    "hpt_stages": 1,
+    "lpt_stages": 1,
+    "nozzle_sectors": 12,
+    "motion_links": [
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary flap 01 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary flap 01 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary seal 01 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary seal 01 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary flap 02 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary flap 02 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary seal 02 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary seal 02 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary flap 03 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary flap 03 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary seal 03 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary seal 03 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary flap 04 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary flap 04 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary seal 04 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary seal 04 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary flap 05 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary flap 05 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary seal 05 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary seal 05 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary flap 06 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary flap 06 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary seal 06 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary seal 06 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary flap 07 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary flap 07 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary seal 07 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary seal 07 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary flap 08 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary flap 08 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary seal 08 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary seal 08 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary flap 09 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary flap 09 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary seal 09 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary seal 09 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary flap 10 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary flap 10 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary seal 10 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary seal 10 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary flap 11 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary flap 11 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary seal 11 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary seal 11 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary flap 12 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary flap 12 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 primary seal 12 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 nozzle actuator travel",
+        "b": "Port F404 secondary seal 12 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary flap 01 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary flap 01 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary seal 01 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary seal 01 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary flap 02 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary flap 02 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary seal 02 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary seal 02 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary flap 03 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary flap 03 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary seal 03 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary seal 03 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary flap 04 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary flap 04 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary seal 04 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary seal 04 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary flap 05 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary flap 05 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary seal 05 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary seal 05 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary flap 06 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary flap 06 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary seal 06 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary seal 06 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary flap 07 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary flap 07 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary seal 07 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary seal 07 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary flap 08 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary flap 08 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary seal 08 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary seal 08 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary flap 09 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary flap 09 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary seal 09 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary seal 09 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary flap 10 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary flap 10 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary seal 10 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary seal 10 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary flap 11 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary flap 11 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary seal 11 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary seal 11 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary flap 12 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary flap 12 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 primary seal 12 hinge",
+        "ratio": 0.28,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 nozzle actuator travel",
+        "b": "Starboard F404 secondary seal 12 hinge",
+        "ratio": -0.22,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 01 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 02 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 03 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 04 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 05 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 06 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 07 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 08 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 09 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 10 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 11 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 12 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 13 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 14 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 15 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 16 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 17 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 18 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 19 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 20 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 21 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 22 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 23 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 fan variable guide control drive",
+        "b": "Port F404 Fan inlet guide vane 24 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 01 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 02 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 03 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 04 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 05 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 06 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 07 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 08 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 09 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 10 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 11 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 12 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 13 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 14 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 15 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 16 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 17 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 18 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 19 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 20 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 21 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 22 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 23 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 24 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 25 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 26 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 27 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 28 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 29 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 30 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 31 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 32 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 33 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC inlet guide vane 34 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 01 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 02 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 03 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 04 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 05 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 06 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 07 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 08 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 09 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 10 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 11 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 12 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 13 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 14 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 15 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 16 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 17 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 18 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 19 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 20 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 21 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 22 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 23 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 24 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 25 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 26 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 27 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 28 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 29 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 30 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 31 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 32 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 33 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 34 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 35 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 36 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 37 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 38 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 39 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 01 variable stator 40 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 01 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 02 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 03 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 04 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 05 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 06 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 07 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 08 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 09 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 10 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 11 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 12 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 13 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 14 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 15 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 16 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 17 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 18 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 19 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 20 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 21 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 22 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 23 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 24 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 25 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 26 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 27 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 28 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 29 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 30 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 31 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 32 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 33 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 34 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 35 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 36 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 37 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 38 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 39 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 40 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 41 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Port F404 HPC variable guide control drive",
+        "b": "Port F404 HPC stage 02 variable stator 42 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 01 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 02 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 03 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 04 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 05 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 06 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 07 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 08 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 09 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 10 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 11 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 12 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 13 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 14 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 15 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 16 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 17 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 18 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 19 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 20 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 21 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 22 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 23 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 fan variable guide control drive",
+        "b": "Starboard F404 Fan inlet guide vane 24 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 01 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 02 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 03 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 04 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 05 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 06 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 07 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 08 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 09 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 10 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 11 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 12 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 13 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 14 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 15 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 16 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 17 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 18 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 19 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 20 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 21 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 22 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 23 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 24 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 25 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 26 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 27 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 28 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 29 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 30 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 31 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 32 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 33 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC inlet guide vane 34 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 01 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 02 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 03 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 04 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 05 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 06 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 07 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 08 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 09 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 10 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 11 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 12 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 13 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 14 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 15 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 16 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 17 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 18 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 19 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 20 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 21 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 22 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 23 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 24 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 25 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 26 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 27 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 28 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 29 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 30 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 31 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 32 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 33 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 34 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 35 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 36 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 37 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 38 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 39 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 01 variable stator 40 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 01 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 02 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 03 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 04 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 05 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 06 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 07 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 08 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 09 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 10 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 11 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 12 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 13 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 14 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 15 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 16 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 17 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 18 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 19 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 20 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 21 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 22 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 23 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 24 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 25 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 26 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 27 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 28 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 29 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 30 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 31 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 32 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 33 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 34 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 35 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 36 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 37 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 38 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 39 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 40 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 41 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      },
+      {
+        "a": "Starboard F404 HPC variable guide control drive",
+        "b": "Starboard F404 HPC stage 02 variable stator 42 pitch",
+        "ratio": 12.0,
+        "offset": 0.0
+      }
+    ]
+  },
+  "envelopes": {
+    "Port": {
+      "max_radius_m": 0.44098825183185447,
+      "body_at_max_radius": "Port_F404_accessories__Accessory_cover_hex_fasteners",
+      "xmin_m": 12.7684,
+      "xmax_m": 16.68,
+      "within_GE_maximum_envelope": true
+    },
+    "Starboard": {
+      "max_radius_m": 0.44098825183185447,
+      "body_at_max_radius": "Starboard_F404_accessories__Accessory_cover_hex_fasteners",
+      "xmin_m": 12.7684,
+      "xmax_m": 16.68,
+      "within_GE_maximum_envelope": true
+    }
+  },
+  "invalid_faces": [],
+  "nonfinite_vertices": [],
+  "missing_joint_components": [],
+  "invalid_motion_links": [],
+  "duplicate_motion_targets": [],
+  "helper_link_export_matches_scene": true,
+  "perforated_liner_topology": {
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0
+  },
+  "quarter_liner_topology": {
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0
+  },
+  "blade_topology": {
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0
+  },
+  "native_link_samples": {
+    "nozzle_ring_25_mm_primary_deg": 7.000000000000001,
+    "nozzle_ring_25_mm_secondary_relative_deg": -5.5,
+    "guide_control_0p75_deg_vane_deg": 9.0
+  },
+  "validation_seconds": 16.824
+}

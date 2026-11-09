@@ -1,0 +1,56 @@
+{
+  "repository": "0xlillith/solidcraft-fa18c-stennis",
+  "release_tag": "v0.1.0",
+  "solidcraft_release": "0.40.0-rc.3",
+  "native_format": "solidcraft/51",
+  "assets": [
+    {
+      "name": "F404_RC3_Engines.sc",
+      "bytes": 42140188,
+      "sha256": "1ed995aa32ce85d7dfed02535261e34323c9acb335f1a8e935c3ee740b1b6bd2",
+      "download_url": "https://github.com/0xlillith/solidcraft-fa18c-stennis/releases/download/v0.1.0/F404_RC3_Engines.sc"
+    },
+    {
+      "name": "FA18C-Stennis-RC3-Realism-20261109.tar.xz",
+      "bytes": 43045936,
+      "sha256": "ba32a2ccc2e8ab82f6998ad8ec313feeba8806c83e6766e81ad41acc854e22b9",
+      "download_url": "https://github.com/0xlillith/solidcraft-fa18c-stennis/releases/download/v0.1.0/FA18C-Stennis-RC3-Realism-20261109.tar.xz"
+    },
+    {
+      "name": "FA18C-Stennis-RC3-Realism-20261109.zip",
+      "bytes": 224461366,
+      "sha256": "5f63087a3644985fc6740b66b8ae5993c881873b9f901aa81a961d7e6b82ab13",
+      "download_url": "https://github.com/0xlillith/solidcraft-fa18c-stennis/releases/download/v0.1.0/FA18C-Stennis-RC3-Realism-20261109.zip"
+    },
+    {
+      "name": "FA18C_RC3_Aircraft.sc",
+      "bytes": 42121630,
+      "sha256": "9e991f5a2ac9f607ed01557f642b290d4d720f936320c516562f643980d4179a",
+      "download_url": "https://github.com/0xlillith/solidcraft-fa18c-stennis/releases/download/v0.1.0/FA18C_RC3_Aircraft.sc"
+    },
+    {
+      "name": "FA18C_RC3_Cockpit.sc",
+      "bytes": 42122052,
+      "sha256": "483f4380c466edc1caea9e9f1b2afa4df56887f7738d37ba9990d6cea6866df6",
+      "download_url": "https://github.com/0xlillith/solidcraft-fa18c-stennis/releases/download/v0.1.0/FA18C_RC3_Cockpit.sc"
+    },
+    {
+      "name": "FA18C_RC3_Internal_Systems.sc",
+      "bytes": 42123335,
+      "sha256": "bbeedb0485ee64901f830567329040cfe329c291a2191c2df00b571ea8f818ae",
+      "download_url": "https://github.com/0xlillith/solidcraft-fa18c-stennis/releases/download/v0.1.0/FA18C_RC3_Internal_Systems.sc"
+    },
+    {
+      "name": "FA18C_RC3_Structure.sc",
+      "bytes": 42123759,
+      "sha256": "36f6ed14bafbb508e3ce1fe60d6c347e904643feeaa94a855580ce2789cf09cb",
+      "download_url": "https://github.com/0xlillith/solidcraft-fa18c-stennis/releases/download/v0.1.0/FA18C_RC3_Structure.sc"
+    },
+    {
+      "name": "FA18C_Stennis_RC3_Master.sc",
+      "bytes": 45890271,
+      "sha256": "34d3bd0c510a32aa4f41fffd9527647a4c88c2a88ea86bb321ac426dc77f1c8d",
+      "download_url": "https://github.com/0xlillith/solidcraft-fa18c-stennis/releases/download/v0.1.0/FA18C_Stennis_RC3_Master.sc"
+    }
+  ]
+}

@@ -1,0 +1,556 @@
+{
+  "scope": "source coupling graph, full input ranges and study keyframe validation, with final gear refinement",
+  "additional_motion_links": 20,
+  "total_motion_links": 400,
+  "studies": [
+    {
+      "name": "Cockpit access - slide then hinge",
+      "steps": 100,
+      "keys": 4
+    },
+    {
+      "name": "Cockpit flight controls - linked surfaces",
+      "steps": 100,
+      "keys": 6
+    },
+    {
+      "name": "Flap selector - AUTO HALF FULL geometry",
+      "steps": 100,
+      "keys": 2
+    },
+    {
+      "name": "Wing fold - cockpit handle",
+      "steps": 100,
+      "keys": 3
+    },
+    {
+      "name": "Landing gear - cockpit lever and doors",
+      "steps": 100,
+      "keys": 7
+    },
+    {
+      "name": "Arresting hook - cockpit handle",
+      "steps": 100,
+      "keys": 1
+    },
+    {
+      "name": "Speedbrake and launch bar",
+      "steps": 100,
+      "keys": 2
+    },
+    {
+      "name": "Refuelling probe and door",
+      "steps": 100,
+      "keys": 2
+    },
+    {
+      "name": "Radar service and gimbals",
+      "steps": 100,
+      "keys": 3
+    },
+    {
+      "name": "Avionics trays and removable covers",
+      "steps": 100,
+      "keys": 8
+    },
+    {
+      "name": "F404 independent two-spool rotation",
+      "steps": 240,
+      "keys": 4
+    },
+    {
+      "name": "F404 nozzle and variable guide mechanisms",
+      "steps": 100,
+      "keys": 6
+    },
+    {
+      "name": "Throttle and HOTAS grip travel",
+      "steps": 100,
+      "keys": 4
+    }
+  ],
+  "new_links": [
+    {
+      "a": "Control stick pitch",
+      "b": "Port stabilator pitch",
+      "ratio": 1.0,
+      "offset": -4.0
+    },
+    {
+      "a": "Control stick pitch",
+      "b": "Starboard stabilator pitch",
+      "ratio": 1.0,
+      "offset": -4.0
+    },
+    {
+      "a": "Left rudder input",
+      "b": "Right rudder input",
+      "ratio": -1.0,
+      "offset": 0.0
+    },
+    {
+      "a": "Left rudder input",
+      "b": "Port rudder",
+      "ratio": 0.6666666666666666,
+      "offset": 0.0
+    },
+    {
+      "a": "Left rudder input",
+      "b": "Starboard rudder",
+      "ratio": 0.6666666666666666,
+      "offset": 0.0
+    },
+    {
+      "a": "Left rudder input",
+      "b": "Nosewheel steering",
+      "ratio": 0.9,
+      "offset": 0.0
+    },
+    {
+      "a": "Control stick roll",
+      "b": "Port aileron droop",
+      "ratio": -0.8,
+      "offset": 30.0
+    },
+    {
+      "a": "Control stick roll",
+      "b": "Starboard aileron droop",
+      "ratio": 0.8,
+      "offset": 30.0
+    },
+    {
+      "a": "Flap selector cockpit handle motion",
+      "b": "Port TE flap",
+      "ratio": 1.0,
+      "offset": 30.0
+    },
+    {
+      "a": "Flap selector cockpit handle motion",
+      "b": "Port inner LE flap",
+      "ratio": 0.4,
+      "offset": 12.0
+    },
+    {
+      "a": "Flap selector cockpit handle motion",
+      "b": "Port outer LE flap",
+      "ratio": 0.4,
+      "offset": 12.0
+    },
+    {
+      "a": "Flap selector cockpit handle motion",
+      "b": "Starboard TE flap",
+      "ratio": 1.0,
+      "offset": 30.0
+    },
+    {
+      "a": "Flap selector cockpit handle motion",
+      "b": "Starboard inner LE flap",
+      "ratio": 0.4,
+      "offset": 12.0
+    },
+    {
+      "a": "Flap selector cockpit handle motion",
+      "b": "Starboard outer LE flap",
+      "ratio": 0.4,
+      "offset": 12.0
+    },
+    {
+      "a": "Landing gear cockpit handle motion",
+      "b": "Nose gear retract",
+      "ratio": -1.7454545454545454,
+      "offset": 0.0
+    },
+    {
+      "a": "Landing gear cockpit handle motion",
+      "b": "Port main gear retract",
+      "ratio": -1.4199115527475998,
+      "offset": 0.0
+    },
+    {
+      "a": "Landing gear cockpit handle motion",
+      "b": "Starboard main gear retract",
+      "ratio": 1.4199115527475998,
+      "offset": 0.0
+    },
+    {
+      "a": "Arresting hook cockpit handle motion",
+      "b": "Arresting hook lower",
+      "ratio": -0.84,
+      "offset": 0.0
+    },
+    {
+      "a": "Wing fold cockpit handle motion",
+      "b": "Port wing fold",
+      "ratio": 1.1111111111111112,
+      "offset": 0.0
+    },
+    {
+      "a": "Wing fold cockpit handle motion",
+      "b": "Starboard wing fold",
+      "ratio": 1.1111111111111112,
+      "offset": 0.0
+    }
+  ],
+  "gear_sequence": {
+    "name": "Landing gear - cockpit lever and doors",
+    "steps": 100,
+    "keys": [
+      {
+        "joint": "Landing gear cockpit handle motion",
+        "points": [
+          [
+            0,
+            0.0
+          ],
+          [
+            20,
+            0.0
+          ],
+          [
+            45,
+            -55.0
+          ],
+          [
+            65,
+            -55.0
+          ],
+          [
+            75,
+            -55.0
+          ],
+          [
+            95,
+            0.0
+          ],
+          [
+            100,
+            0.0
+          ]
+        ]
+      },
+      {
+        "joint": "Launch bar lift",
+        "points": [
+          [
+            0,
+            0.0
+          ],
+          [
+            8,
+            0.0
+          ],
+          [
+            18,
+            117.26947198845808
+          ],
+          [
+            95,
+            117.26947198845808
+          ],
+          [
+            100,
+            0.0
+          ]
+        ]
+      },
+      {
+        "joint": "Left rudder input",
+        "points": [
+          [
+            0,
+            0.0
+          ],
+          [
+            100,
+            0.0
+          ]
+        ]
+      },
+      {
+        "joint": "Nose Port door",
+        "points": [
+          [
+            0,
+            83.0
+          ],
+          [
+            8,
+            90.0
+          ],
+          [
+            45,
+            90.0
+          ],
+          [
+            55,
+            0.0
+          ],
+          [
+            65,
+            0.0
+          ],
+          [
+            75,
+            90.0
+          ],
+          [
+            95,
+            90.0
+          ],
+          [
+            100,
+            83.0
+          ]
+        ]
+      },
+      {
+        "joint": "Nose Starboard door",
+        "points": [
+          [
+            0,
+            83.0
+          ],
+          [
+            8,
+            90.0
+          ],
+          [
+            45,
+            90.0
+          ],
+          [
+            55,
+            0.0
+          ],
+          [
+            65,
+            0.0
+          ],
+          [
+            75,
+            90.0
+          ],
+          [
+            95,
+            90.0
+          ],
+          [
+            100,
+            83.0
+          ]
+        ]
+      },
+      {
+        "joint": "Port main bay door",
+        "points": [
+          [
+            0,
+            87.0
+          ],
+          [
+            8,
+            90.0
+          ],
+          [
+            45,
+            90.0
+          ],
+          [
+            55,
+            0.0
+          ],
+          [
+            65,
+            0.0
+          ],
+          [
+            75,
+            90.0
+          ],
+          [
+            95,
+            90.0
+          ],
+          [
+            100,
+            87.0
+          ]
+        ]
+      },
+      {
+        "joint": "Starboard main bay door",
+        "points": [
+          [
+            0,
+            87.0
+          ],
+          [
+            8,
+            90.0
+          ],
+          [
+            45,
+            90.0
+          ],
+          [
+            55,
+            0.0
+          ],
+          [
+            65,
+            0.0
+          ],
+          [
+            75,
+            90.0
+          ],
+          [
+            95,
+            90.0
+          ],
+          [
+            100,
+            87.0
+          ]
+        ]
+      }
+    ]
+  },
+  "gear_retract_pose": {
+    "Launch bar lift": 117.26947198845808,
+    "Nose gear retract": 96.0,
+    "Port main gear retract": 78.09513540111799,
+    "Starboard main gear retract": -78.09513540111799,
+    "Nose Port door": 0,
+    "Nose Starboard door": 0,
+    "Port main bay door": 0,
+    "Starboard main bay door": 0
+  },
+  "gear_sequence_check": {
+    "sample_intervals": 100,
+    "gear_moving_intervals": [
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94
+    ],
+    "bar_raised_and_doors_open_during_all_motion": true
+  },
+  "adjusted_drivers": [
+    {
+      "name": "Flap selector cockpit handle motion",
+      "limits": [
+        -30,
+        15
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Landing gear cockpit handle motion",
+      "limits": [
+        -55,
+        0
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Arresting hook cockpit handle motion",
+      "limits": [
+        -50,
+        0
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Wing fold cockpit handle motion",
+      "limits": [
+        0,
+        90
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Control stick pitch",
+      "limits": [
+        -18,
+        18
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Control stick roll",
+      "limits": [
+        -18,
+        18
+      ],
+      "default": 0,
+      "kind": "revolute"
+    },
+    {
+      "name": "Left rudder input",
+      "limits": [
+        -0.045,
+        0.045
+      ],
+      "default": 0,
+      "kind": "slider"
+    },
+    {
+      "name": "Launch bar lift",
+      "limits": [
+        0,
+        125
+      ],
+      "default": 0,
+      "kind": "revolute"
+    }
+  ],
+  "idempotent": true,
+  "sha256": "df2b458e83e846b7982839061b000943a820399a1e7caec0118df92ec1442acb"
+}

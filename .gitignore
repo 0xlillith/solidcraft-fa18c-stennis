@@ -1,0 +1,21 @@
+# Generated geometry, native scenes and release downloads
+/dist/
+/build/
+/obj/
+/runtime/
+/development/
+/validation/
+/native/*-receipts/
+**/commands.jsonl
+**/command-timings.json
+**/native-state.json
+*.sc
+*.solidcraft
+*.zip
+*.tar.xz
+*.tar.gz
+*.log
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
